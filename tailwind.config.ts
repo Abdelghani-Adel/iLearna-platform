@@ -20,14 +20,18 @@ const config: Config = {
         accent: {
           light: "#7BC8EC",
           DEFAULT: "#43B1E4",
-          dark: "#286A89",
+          dark: "#368EB6",
         },
-        neutral: {
-          light: "#99A7AB",
+        error: {
+          DEFAULT: "#D00000",
+        },
+        success: {
+          DEFAULT: "#38B000",
+        },
+        customGray: {
+          light: "#e5e7eb",
           DEFAULT: "#808080",
-          dark: "#666666",
         },
-        customGray: "#2d3748",
       },
     },
   },

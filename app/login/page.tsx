@@ -1,4 +1,5 @@
 "use client";
+
 import AuthImage from "@/components/routes/login/AuthImage";
 import CreateNewPassword from "@/components/routes/login/CreateNewPassword";
 import LoginFooter from "@/components/routes/login/LoginFooter";
@@ -6,15 +7,32 @@ import LoginHeader from "@/components/routes/login/LoginHeader";
 import ResetPasswordRequest from "@/components/routes/login/ResetPasswordRequest";
 import SignIn from "@/components/routes/login/SignIn";
 import SignUp from "@/components/routes/login/Signup";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const LoginPage = () => {
+  const [activeForm, setActiveForm] = useState<IActiveAuthForm>("loginForm");
+
+  const renderForm = () => {
+    switch (activeForm) {
+      case "loginForm":
+        return <SignIn changeActiveForm={setActiveForm} />;
+      case "signUpForm":
+        return <SignUp changeActiveForm={setActiveForm} />;
+      case "resetRequest":
+        return <ResetPasswordRequest changeActiveForm={setActiveForm} />;
+      case "resetForm":
+        return <CreateNewPassword changeActiveForm={setActiveForm} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex space-x-5 p-3 h-screen">
       <div className="w-full px-2 py-3 md:w-[70%] md:mx-auto lg:w-1/2 lg:px-28 lg:py-3 flex flex-col">
         <LoginHeader />
 
-        <RenderedComponent />
+        {renderForm()}
 
         <LoginFooter />
       </div>
@@ -26,32 +44,13 @@ const LoginPage = () => {
   );
 };
 
-const RenderedComponent = () => {
-  const [component, setComponent] = useState<IRenderedComponent>("loginForm");
-
-  const renderComponent = () => {
-    switch (component) {
-      case "loginForm":
-        return <SignIn setRenderedComponent={setComponent} />;
-      case "signUpForm":
-        return <SignUp setRenderedComponent={setComponent} />;
-      case "resetRequest":
-        return <ResetPasswordRequest />;
-      case "resetForm":
-        return <CreateNewPassword />;
-      default:
-        return null;
-    }
-  };
-
-  return <>{renderComponent()}</>;
-};
-
-export type IRenderedComponent =
+type IActiveAuthForm =
   | "loginForm"
   | "signUpForm"
   | "resetForm"
   | "resetRequest"
   | "resetComplete";
+
+export type IFnChangeAuthForm = (component: IActiveAuthForm) => void;
 
 export default LoginPage;

@@ -12,10 +12,10 @@ export default function Error({ error, reset }: Props) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-md rounded-lg p-8 max-w-md text-center">
-        <h2 className="text-2xl font-bold text-red-600 mb-4">
+        <h2 className="text-2xl font-bold text-error mb-4">
           Oops! Something went wrong
         </h2>
-        <p className="text-gray-700 mb-6">{error.message}</p>
+        <p className="text-customGray mb-6">{error.message}</p>
         <button
           onClick={() => reset()}
           className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"

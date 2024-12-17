@@ -1,7 +1,79 @@
-import React from "react";
+import { IFnChangeAuthForm } from "@/app/login/page";
+import InputPassword from "@/components/ui/InputPassword";
+import { FC } from "react";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { IoArrowBack } from "react-icons/io5";
 
-const CreateNewPassword = () => {
-  return <div>CreateNewPassword</div>;
+interface CreateNewPasswordForm {
+  password: string;
+  confirmPassword: string;
+}
+
+interface IProps {
+  changeActiveForm: IFnChangeAuthForm;
+}
+
+const CreateNewPassword: FC<IProps> = (props) => {
+  const formMethods = useForm<CreateNewPasswordForm>();
+  const { handleSubmit } = formMethods;
+
+  const submitHandler: SubmitHandler<CreateNewPasswordForm> = (data) => {
+    // handleSubmit({ password: data.password });
+  };
+
+  return (
+    <div className="max-w-lg mx-auto p-4">
+      {/* Back Button */}
+      <button
+        className="flex items-center text-customGray mb-4 hover:text-black"
+        onClick={() => props.changeActiveForm("loginForm")}
+      >
+        <IoArrowBack className="mr-2" />
+        Back
+      </button>
+
+      {/* Title */}
+      <h1 className="text-4xl font-bold text-accent mb-2">
+        Create new password<span className="text-accent">.</span>
+      </h1>
+
+      {/* Description */}
+      <p className="text-customGray mb-6">
+        Enter your new password below to complete the reset process. Ensure it's
+        strong and secure.
+      </p>
+
+      {/* Form */}
+      <FormProvider {...formMethods}>
+        <form onSubmit={handleSubmit(submitHandler)} className="space-y-6">
+          <InputPassword
+            name="password"
+            label="New password"
+            placeholder="Enter your new password"
+            rules={{ required: "Please enter you new password" }}
+            isNewPassword
+          />
+
+          <InputPassword
+            name="confirmPassword"
+            label="Confirm password"
+            placeholder="Confirm your password"
+            rules={{ required: "Please confirm you new password" }}
+            confirmField="password"
+          />
+
+          <button
+            type="submit"
+            className={
+              "w-full py-3 text-white rounded-lg transition duration-200 bg-blue-500 hover:bg-blue-600"
+            }
+          >
+            Reset password
+          </button>
+        </form>
+      </FormProvider>
+    </div>
+  );
 };
 
 export default CreateNewPassword;

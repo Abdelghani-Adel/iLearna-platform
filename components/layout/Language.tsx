@@ -12,7 +12,7 @@ const Language = () => {
         className="w-5 h-5 shrink-0"
       />
 
-      <p className="text-neutral font-medium">English (us)</p>
+      <p className="text-customGray font-normal">English (us)</p>
     </div>
   );
 };

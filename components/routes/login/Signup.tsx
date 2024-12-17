@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
-import { useForm, SubmitHandler, UseFormSetValue } from "react-hook-form";
-import { IRenderedComponent } from "@/app/login/page";
+import { IFnChangeAuthForm } from "@/app/login/page";
+import InputEmail from "@/components/ui/InputEmail";
+import InputFile from "@/components/ui/InputFile";
+import InputPassword from "@/components/ui/InputPassword";
+import InputText from "@/components/ui/InputText";
 import Link from "next/link";
-import InputField from "@/components/ui/InputField";
-import FileInput from "@/components/ui/FileInput";
+import { FC, useState } from "react";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 type FormValues = {
   username: string;
@@ -15,17 +17,16 @@ type FormValues = {
 };
 
 type IProps = {
-  setRenderedComponent: (component: IRenderedComponent) => void;
+  changeActiveForm: IFnChangeAuthForm;
 };
 
-const SignUp = (props: IProps) => {
+const SignUp: FC<IProps> = (props) => {
   const [activeTab, setActiveTab] = useState<"student" | "freelancer">(
     "student"
   );
 
-  const form = useForm<FormValues>();
-  const { register, handleSubmit, setValue, formState } = form;
-  const { errors } = formState;
+  const formMethods = useForm<FormValues>();
+  const { handleSubmit } = formMethods;
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("Form Data:", data);
@@ -42,8 +43,8 @@ const SignUp = (props: IProps) => {
           onClick={() => setActiveTab("student")}
           className={`w-1/2 pb-2 text-center ${
             activeTab === "student"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-400"
+              ? "text-accent border-b-2 border-accent-light"
+              : "text-customGray"
           }`}
         >
           Student
@@ -52,8 +53,8 @@ const SignUp = (props: IProps) => {
           onClick={() => setActiveTab("freelancer")}
           className={`w-1/2 pb-2 text-center ${
             activeTab === "freelancer"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-400"
+              ? "text-accent border-b-2 border-accent-light"
+              : "text-customGray"
           }`}
         >
           Freelancer
@@ -61,83 +62,68 @@ const SignUp = (props: IProps) => {
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* Username */}
-        <InputField
-          id="username"
-          label="Username"
-          placeholder="Enter your name"
-          register={register("username", { required: "Username is required" })}
-          error={errors.username?.message}
-        />
-
-        {/* Email */}
-        <InputField
-          id="email"
-          label="Email"
-          type="email"
-          placeholder="Enter your email"
-          register={register("email", {
-            required: "Email is required",
-            pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" },
-          })}
-          error={errors.email?.message}
-        />
-
-        {/* Password */}
-        <InputField
-          id="password"
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-          register={register("password", {
-            required: "Password is required",
-            minLength: {
-              value: 8,
-              message: "Password must be at least 8 characters long",
-            },
-            pattern: {
-              value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
-              message: "Must include an uppercase, a number, and a symbol",
-            },
-          })}
-          error={errors.password?.message}
-        />
-
-        {/* Password Hints */}
-        <ul className="text-neutral text-xs space-y-1 font-thin">
-          <li>✓ Minimum 8 characters in length.</li>
-          <li>✓ At least one uppercase letter (A-Z).</li>
-          <li>✓ Contains a number & symbol.</li>
-        </ul>
-
-        {/* File Upload for Freelancer Tab */}
-        {activeTab === "freelancer" && (
-          <FileInput<FormValues>
-            label="Upload your CV"
-            name="cv"
-            setValue={setValue}
-            accept=".pdf, .doc, .docx"
-            helperText="Supported formats: PDF, DOC, DOCX."
-            error={errors.cv?.message}
+      <FormProvider {...formMethods}>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          {/* Username */}
+          <InputText
+            name="username"
+            label="Username"
+            placeholder="Enter your name"
+            rules={{ required: "Username is required" }}
           />
-        )}
 
-        {/* Sign Up Button */}
-        <button
-          type="submit"
-          className="w-full py-2 text-white bg-accent rounded-md hover:bg-accent-dark transition duration-300"
-        >
-          Sign Up
-        </button>
-      </form>
+          <InputEmail
+            name="email"
+            label="Email"
+            placeholder="Enter your email"
+            rules={{
+              required: "Email is required",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email address",
+              },
+            }}
+          />
+
+          <InputPassword
+            name="password"
+            label="Password"
+            placeholder="Enter your password"
+            isNewPassword
+            rules={{
+              required: "Password is required",
+              minLength: {
+                value: 8,
+                message: "Password must be at least 8 characters long",
+              },
+              pattern: {
+                value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
+                message: "Must include an uppercase, a number, and a symbol",
+              },
+            }}
+          />
+
+          {/* File Upload for Freelancer Tab */}
+          {activeTab === "freelancer" && (
+            <InputFile name="cv" label="Upload your CV" />
+          )}
+
+          {/* Sign Up Button */}
+          <button
+            type="submit"
+            className="w-full py-2 text-white bg-accent rounded-md hover:bg-accent-dark transition duration-300"
+          >
+            Sign Up
+          </button>
+        </form>
+      </FormProvider>
 
       {/* Login Option */}
-      <div className="mt-4 text-center text-sm text-gray-600">
+      <div className="mt-4 text-center text-sm text-customGray">
         Already have an account?{" "}
         <button
-          className="text-blue-500 hover:underline font-medium"
-          onClick={() => props.setRenderedComponent("loginForm")}
+          className="text-accent hover:underline font-medium"
+          onClick={() => props.changeActiveForm("loginForm")}
         >
           Login
         </button>
@@ -146,10 +132,10 @@ const SignUp = (props: IProps) => {
       {/* Divider */}
       <div className="relative my-4">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300"></div>
+          <div className="w-full border-t border-accent-light"></div>
         </div>
         <div className="relative flex justify-center text-sm">
-          <span className="px-2 bg-white text-gray-500">or sign up with</span>
+          <span className="px-2 bg-white text-customGray">or sign up with</span>
         </div>
       </div>
 
@@ -179,7 +165,7 @@ const SignUp = (props: IProps) => {
 
       {/* Terms & Conditions */}
       <div className="text-center mt-3 text-xs">
-        <p className="text-gray-500">
+        <p className="text-customGray">
           By signing up to create an account I accept Company’s{" "}
         </p>
         <Link href="#" className="text-accent">
