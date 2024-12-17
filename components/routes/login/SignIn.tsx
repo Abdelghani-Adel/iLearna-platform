@@ -25,7 +25,7 @@ const SignIn: FC<IProps> = (props) => {
 
   return (
     <div className="my-auto">
-      <h2 className="text-3xl font-bold text-accent mb-6">Welcome Back.</h2>
+      <h2 className="text-3xl font-bold text-accent mb-5">Welcome Back.</h2>
 
       <FormProvider {...formMethods}>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

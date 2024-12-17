@@ -23,7 +23,6 @@ const CreateNewPassword: FC<IProps> = (props) => {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      {/* Back Button */}
       <button
         className="flex items-center text-customGray mb-4 hover:text-black"
         onClick={() => props.changeActiveForm("loginForm")}
@@ -32,18 +31,15 @@ const CreateNewPassword: FC<IProps> = (props) => {
         Back
       </button>
 
-      {/* Title */}
-      <h1 className="text-4xl font-bold text-accent mb-2">
-        Create new password<span className="text-accent">.</span>
-      </h1>
+      <h2 className="text-3xl font-bold text-accent mb-5">
+        Create new password.
+      </h2>
 
-      {/* Description */}
       <p className="text-customGray mb-6">
         Enter your new password below to complete the reset process. Ensure it's
         strong and secure.
       </p>
 
-      {/* Form */}
       <FormProvider {...formMethods}>
         <form onSubmit={handleSubmit(submitHandler)} className="space-y-6">
           <InputPassword

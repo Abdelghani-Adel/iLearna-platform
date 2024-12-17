@@ -34,10 +34,8 @@ const SignUp: FC<IProps> = (props) => {
 
   return (
     <div className="mt-6 font-semibold">
-      {/* Title */}
       <h2 className="text-3xl font-bold text-accent mb-5">Create account.</h2>
 
-      {/* Tabs */}
       <div className="flex justify-center mb-6 border-b">
         <button
           onClick={() => setActiveTab("student")}
@@ -61,10 +59,8 @@ const SignUp: FC<IProps> = (props) => {
         </button>
       </div>
 
-      {/* Form */}
       <FormProvider {...formMethods}>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Username */}
           <InputText
             name="username"
             label="Username"
@@ -103,12 +99,10 @@ const SignUp: FC<IProps> = (props) => {
             }}
           />
 
-          {/* File Upload for Freelancer Tab */}
           {activeTab === "freelancer" && (
             <InputFile name="cv" label="Upload your CV" />
           )}
 
-          {/* Sign Up Button */}
           <button
             type="submit"
             className="w-full py-2 text-white bg-accent rounded-md hover:bg-accent-dark transition duration-300"
@@ -118,7 +112,6 @@ const SignUp: FC<IProps> = (props) => {
         </form>
       </FormProvider>
 
-      {/* Login Option */}
       <div className="mt-4 text-center text-sm text-customGray">
         Already have an account?{" "}
         <button
@@ -129,7 +122,6 @@ const SignUp: FC<IProps> = (props) => {
         </button>
       </div>
 
-      {/* Divider */}
       <div className="relative my-4">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t border-accent-light"></div>
@@ -163,7 +155,6 @@ const SignUp: FC<IProps> = (props) => {
         </button>
       </div>
 
-      {/* Terms & Conditions */}
       <div className="text-center mt-3 text-xs">
         <p className="text-customGray">
           By signing up to create an account I accept Company’s{" "}
