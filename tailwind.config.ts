@@ -21,6 +21,7 @@ const config: Config = {
           light: "#7BC8EC",
           DEFAULT: "#43B1E4",
           dark: "#368EB6",
+          darker: "#1B475B",
         },
         error: {
           DEFAULT: "#D00000",
