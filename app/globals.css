@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .navLink-active {
+    position: relative;
+  }
+  .navLink-active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    @apply bg-primary;
+  }
+}

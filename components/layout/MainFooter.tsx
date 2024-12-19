@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const MainFooter: React.FC = () => {
   return (
-    <footer className="bg-accent-darker text-white py-8 w-full">
+    <footer className="bg-accent-darker text-white py-8 w-full mt-auto">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
           {/* Logo & Description */}
