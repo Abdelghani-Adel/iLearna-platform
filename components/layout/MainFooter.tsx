@@ -1,13 +1,13 @@
-import React from "react";
-import Language from "./Language";
-import Image from "next/image";
-import {
-  FaXTwitter,
-  FaFacebook,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa6";
 import Link from "next/link";
+import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+} from "react-icons/fa6";
+import Language from "./Language";
+import Logo from "./Logo";
 
 const MainFooter: React.FC = () => {
   return (
@@ -17,15 +17,7 @@ const MainFooter: React.FC = () => {
           {/* Logo & Description */}
           <div className="md:col-span-3 lg:col-span-2">
             <div className="h-[4.5rem] flex items-center">
-              <Link href="/">
-                <Image
-                  src="/images/brand/white-logo.png"
-                  alt="White Logo"
-                  width={1266}
-                  height={399}
-                  className="w-48"
-                />
-              </Link>
+              <Logo white className="w-48" />
             </div>
             <p className="text-sm leading-relaxed">
               i.learna is an innovative e-learning platform designed to connect

@@ -1,29 +1,15 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { FC } from "react";
+import Logo from "./Logo";
 
 const MainHeader: React.FC = () => {
   return (
     <header className="flex items-center space-x-10 px-6 py-4 bg-white shadow-sm">
-      <Logo />
+      <Logo className="w-28" />
       <NavBar />
     </header>
-  );
-};
-
-const Logo: FC = () => {
-  return (
-    <Link href="/">
-      <Image
-        src="/images/brand/blue-logo.png"
-        alt="White Logo"
-        width={1248}
-        height={388}
-        className="w-24"
-      />
-    </Link>
   );
 };
 
