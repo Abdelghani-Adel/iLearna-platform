@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 export default function WithLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen">
+    <div className="flex flex-col justify-between min-h-screen">
       {children}
       <MainFooter />
     </div>

@@ -4,7 +4,7 @@ import "./globals.css";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,8 @@ interface LayoutProps {
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
     <html lang="en">
-      <body className={baiJamjuree.className}>{children}</body>
+      {/* <body className={`${baiJamjuree.className} w-screen overflow-x-hidden`}> */}
+      <body className={`${baiJamjuree.className}`}>{children}</body>
     </html>
   );
 }
