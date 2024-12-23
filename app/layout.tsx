@@ -19,7 +19,6 @@ interface LayoutProps {
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
     <html lang="en">
-      {/* <body className={`${baiJamjuree.className} w-screen overflow-x-hidden`}> */}
       <body className={`${baiJamjuree.className}`}>{children}</body>
     </html>
   );

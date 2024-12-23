@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <div className="flex flex-col lg:flex-row px-2 py-5 space-y-5 lg:space-x-5">
+    <main className="flex flex-col lg:flex-row px-2 py-5 space-y-5 lg:space-x-5">
       <div className="lg:w-1/2">
         <ContactText />
       </div>
@@ -19,7 +19,7 @@ const Page = () => {
       <div className="lg:w-1/2">
         <ContactForm />
       </div>
-    </div>
+    </main>
   );
 };
 
