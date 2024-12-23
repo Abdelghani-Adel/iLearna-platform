@@ -1,6 +1,8 @@
 import React from "react";
 import { baseMetadata } from "@/utils/baseMetadata";
 import { Metadata } from "next";
+import ContactText from "@/components/routes/contact/ContactText";
+import ContactForm from "@/components/routes/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "I Learna Contacts",
@@ -8,7 +10,17 @@ export const metadata: Metadata = {
 };
 
 const Page = () => {
-  return <div>contact</div>;
+  return (
+    <div className="flex flex-col lg:flex-row px-2 py-5 space-y-5 lg:space-x-5">
+      <div className="lg:w-1/2">
+        <ContactText />
+      </div>
+
+      <div className="lg:w-1/2">
+        <ContactForm />
+      </div>
+    </div>
+  );
 };
 
 export default Page;
