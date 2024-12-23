@@ -5,10 +5,22 @@ import PageTitle from "@/components/ui/PageTitle";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 import Image from "next/image";
+import Carousel from "@/components/ui/Carousel";
+import { Settings } from "react-slick";
+import reviews from "@/public/data/reviews.json";
+import { v4 } from "uuid";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export const metadata: Metadata = {
   title: "About I Learna",
   ...baseMetadata,
+};
+
+const carouselSettings: Settings = {
+  slidesToShow: 3,
+  autoplay: true,
+  speed: 500,
+  arrows: false,
 };
 
 const Page = () => {
@@ -79,6 +91,32 @@ const Page = () => {
             personalized, hands-on, and impactful learning experiences
           </p>
         </div>
+      </section>
+
+      <section>
+        <div className="max-w-sm ml-20">
+          <SectionTitle>What our users say about iLearna</SectionTitle>
+        </div>
+        <Carousel settings={carouselSettings}>
+          {reviews.map((review) => (
+            <div key={v4()} className="p-4">
+              <div className="px-8 py-12 bg-gray-100 rounded-lg space-y-5">
+                <div className="flex items-center space-x-3">
+                  <Image
+                    src={review.avatar}
+                    height={50}
+                    width={50}
+                    alt="user avatar"
+                    className="rounded-full"
+                  />
+                  <h3 className="text-lg">{review.name}</h3>
+                </div>
+
+                <p className="font-light">{review.review}</p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </section>
     </main>
   );
