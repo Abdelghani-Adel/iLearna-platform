@@ -18,8 +18,6 @@ const NavBar: React.FC = () => {
     <nav className="flex items-center space-x-10 text-sm text-primary">
       <NavLink href="/" label="home" />
       <NavLink href="/courses" label="courses" />
-      <NavLink href="/community" label="community" />
-      <NavLink href="/blogs" label="blogs" />
       <NavLink href="/about-us" label="about" />
       <NavLink href="/contact" label="contact" />
     </nav>
