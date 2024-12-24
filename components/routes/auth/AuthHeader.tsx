@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const LoginHeader = () => {
+const AuthHeader = () => {
   return (
     <div className="flex items-center justify-between">
       <Link href="/">
@@ -20,4 +20,4 @@ const LoginHeader = () => {
   );
 };
 
-export default LoginHeader;
+export default AuthHeader;
