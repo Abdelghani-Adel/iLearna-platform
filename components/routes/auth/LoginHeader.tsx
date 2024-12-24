@@ -5,16 +5,18 @@ import React from "react";
 
 const LoginHeader = () => {
   return (
-    <Link href="/" className="flex items-center justify-between">
-      <Image
-        src="/images/brand/icon-logo.png"
-        width={1500}
-        height={1500}
-        alt="Icon Logo"
-        className="w-12 h-12 shrink-0"
-      />
+    <div className="flex items-center justify-between">
+      <Link href="/">
+        <Image
+          src="/images/brand/icon-logo.png"
+          width={1500}
+          height={1500}
+          alt="Icon Logo"
+          className="w-12 h-12 shrink-0"
+        />
+      </Link>
       <Language />
-    </Link>
+    </div>
   );
 };
 

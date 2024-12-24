@@ -9,13 +9,15 @@ interface LayoutProps {
 
 const AuthLayout: FC<LayoutProps> = ({ children }) => {
   return (
-    <main className="flex space-x-5 p-3 h-screen">
-      <section className="w-full px-2 py-3 md:w-[70%] md:mx-auto lg:w-1/2 lg:px-28 lg:py-3 flex flex-col">
+    <main className="lg:flex space-x-5 p-3 h-screen">
+      <section className="flex flex-col w-full h-full md:w-[70%] lg:w-1/2 md:mx-auto p-3 xl:px-28 xl:py-3">
         <LoginHeader />
 
         {children}
 
-        <LoginFooter />
+        <div className="mt-auto">
+          <LoginFooter />
+        </div>
       </section>
 
       <section className="hidden lg:block w-1/2 h-full">
