@@ -1,6 +1,5 @@
 "use client";
 
-import { IFnChangeAuthForm } from "@/app/login/page";
 import InputEmail from "@/components/ui/InputEmail";
 import InputFile from "@/components/ui/InputFile";
 import InputPassword from "@/components/ui/InputPassword";
@@ -16,11 +15,7 @@ type FormValues = {
   cv?: FileList;
 };
 
-type IProps = {
-  changeActiveForm: IFnChangeAuthForm;
-};
-
-const SignUp: FC<IProps> = (props) => {
+const SignUp = () => {
   const [activeTab, setActiveTab] = useState<"student" | "freelancer">(
     "student"
   );
@@ -114,12 +109,12 @@ const SignUp: FC<IProps> = (props) => {
 
       <div className="mt-4 text-center text-sm text-customGray">
         Already have an account?{" "}
-        <button
+        <Link
+          href="sign-in"
           className="text-accent hover:underline font-medium"
-          onClick={() => props.changeActiveForm("loginForm")}
         >
           Login
-        </button>
+        </Link>
       </div>
 
       <div className="relative my-4">

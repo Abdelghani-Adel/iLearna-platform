@@ -1,19 +1,15 @@
-import { IFnChangeAuthForm } from "@/app/login/page";
+"use client";
 import InputEmail from "@/components/ui/InputEmail";
+import Link from "next/link";
 import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { IoArrowBack } from "react-icons/io5"; // For the back arrow icon
+import { IoArrowBack } from "react-icons/io5";
 
-// Define the form data type
 interface ResetPasswordForm {
   email: string;
 }
 
-interface IProps {
-  changeActiveForm: IFnChangeAuthForm;
-}
-
-const ResetPasswordRequest: React.FC<IProps> = (props) => {
+const ResetPasswordRequest = () => {
   const formMethods = useForm<ResetPasswordForm>();
   const { handleSubmit } = formMethods;
 
@@ -21,13 +17,13 @@ const ResetPasswordRequest: React.FC<IProps> = (props) => {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      <button
+      <Link
+        href="sign-in"
         className="flex items-center text-customGray mb-4 hover:text-black"
-        onClick={() => props.changeActiveForm("loginForm")}
       >
         <IoArrowBack className="mr-2" />
         Back
-      </button>
+      </Link>
 
       <h2 className="text-3xl font-bold text-accent mb-5">
         Reset your password.

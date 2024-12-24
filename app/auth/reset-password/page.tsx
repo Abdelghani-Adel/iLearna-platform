@@ -1,19 +1,13 @@
-import { IFnChangeAuthForm } from "@/app/login/page";
+"use client";
 import InputPassword from "@/components/ui/InputPassword";
-import { FC } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { IoArrowBack } from "react-icons/io5";
 
 interface CreateNewPasswordForm {
   password: string;
   confirmPassword: string;
 }
 
-interface IProps {
-  changeActiveForm: IFnChangeAuthForm;
-}
-
-const CreateNewPassword: FC<IProps> = (props) => {
+const ResetPassword = () => {
   const formMethods = useForm<CreateNewPasswordForm>();
   const { handleSubmit } = formMethods;
 
@@ -23,14 +17,6 @@ const CreateNewPassword: FC<IProps> = (props) => {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      <button
-        className="flex items-center text-customGray mb-4 hover:text-black"
-        onClick={() => props.changeActiveForm("loginForm")}
-      >
-        <IoArrowBack className="mr-2" />
-        Back
-      </button>
-
       <h2 className="text-3xl font-bold text-accent mb-5">
         Create new password.
       </h2>
@@ -72,4 +58,4 @@ const CreateNewPassword: FC<IProps> = (props) => {
   );
 };
 
-export default CreateNewPassword;
+export default ResetPassword;

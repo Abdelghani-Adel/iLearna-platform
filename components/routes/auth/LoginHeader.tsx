@@ -1,10 +1,11 @@
 import Language from "@/components/layout/Language";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const LoginHeader = () => {
   return (
-    <div className="flex items-center justify-between">
+    <Link href="/" className="flex items-center justify-between">
       <Image
         src="/images/brand/icon-logo.png"
         width={1500}
@@ -13,7 +14,7 @@ const LoginHeader = () => {
         className="w-12 h-12 shrink-0"
       />
       <Language />
-    </div>
+    </Link>
   );
 };
 

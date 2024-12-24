@@ -1,9 +1,8 @@
 "use client";
-
-import { IFnChangeAuthForm } from "@/app/login/page";
 import InputPassword from "@/components/ui/InputPassword";
 import InputText from "@/components/ui/InputText";
-import { FC } from "react";
+import Link from "next/link";
+import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 type FormValues = {
@@ -11,11 +10,7 @@ type FormValues = {
   password: string;
 };
 
-type IProps = {
-  changeActiveForm: IFnChangeAuthForm;
-};
-
-const SignIn: FC<IProps> = (props) => {
+const Login = () => {
   const formMethods = useForm<FormValues>();
   const { handleSubmit } = formMethods;
 
@@ -45,13 +40,12 @@ const SignIn: FC<IProps> = (props) => {
             }}
           />
 
-          <button
-            type="button"
-            className="text-primary text-sm hover:underline block ml-auto"
-            onClick={() => props.changeActiveForm("resetRequest")}
+          <Link
+            href="reset-password-request"
+            className="text-primary text-sm hover:underline block text-end"
           >
             Forgot Password ?
-          </button>
+          </Link>
 
           <button
             type="submit"
@@ -64,12 +58,9 @@ const SignIn: FC<IProps> = (props) => {
 
       <div className="mt-6 text-center text-sm text-customGray">
         Don't have an account?{" "}
-        <button
-          className="text-accent hover:underline"
-          onClick={() => props.changeActiveForm("signUpForm")}
-        >
+        <Link href="sign-up" className="text-accent hover:underline">
           Signup
-        </button>
+        </Link>
       </div>
 
       <div className="relative my-3">
@@ -108,4 +99,4 @@ const SignIn: FC<IProps> = (props) => {
   );
 };
 
-export default SignIn;
+export default Login;
