@@ -5,7 +5,7 @@ import InputFile from "@/components/ui/InputFile";
 import InputPassword from "@/components/ui/InputPassword";
 import InputText from "@/components/ui/InputText";
 import Link from "next/link";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 type FormValues = {

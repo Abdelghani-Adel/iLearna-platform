@@ -16,7 +16,7 @@ const ResetPasswordRequest = () => {
   const submitHandler: SubmitHandler<ResetPasswordForm> = (data) => {};
 
   return (
-    <div className="max-w-lg mx-auto p-4">
+    <div className="pt-5">
       <Link
         href="sign-in"
         className="flex items-center text-customGray mb-4 hover:text-black"
