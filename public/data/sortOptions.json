@@ -1,0 +1,32 @@
+[
+  {
+    "sortOptionId": 1,
+    "sortOptionTitle": "Highest to Lowest Rate",
+    "sortOptionValue": "hlr"
+  },
+  {
+    "sortOptionId": 2,
+    "sortOptionTitle": "Lowest to Highest Rate",
+    "sortOptionValue": "lhr"
+  },
+  {
+    "sortOptionId": 3,
+    "sortOptionTitle": "Highest to Lowest Price",
+    "sortOptionValue": "hlp"
+  },
+  {
+    "sortOptionId": 4,
+    "sortOptionTitle": "Lowest to Highest Price",
+    "sortOptionValue": "lhp"
+  },
+  {
+    "sortOptionId": 5,
+    "sortOptionTitle": "Newest to Oldest",
+    "sortOptionValue": "newest"
+  },
+  {
+    "sortOptionId": 6,
+    "sortOptionTitle": "Oldest to Newest",
+    "sortOptionValue": "oldest"
+  }
+]
