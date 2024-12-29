@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Pagination from "@/components/ui/Pagination";
+import { BsGrid3X2Gap } from "react-icons/bs";
+import { MdOutlineList } from "react-icons/md";
 
 const Page = () => {
   const [items, setItems] = useState<any[]>([]);
-  const [totalItems, setTotalItems] = useState<number>(100);
+  const [totalItems, setTotalItems] = useState<number>(30);
   const [itemsPerPage, setItemsPerPage] = useState<number>(9);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
@@ -45,14 +47,36 @@ const Page = () => {
   };
 
   return (
-    <div>
-      Courses
-      <Pagination
-        currentPage={currentPage}
-        totalItems={totalItems}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-      />
+    <div className="p-4 grid grid-cols-4 gap-4">
+      <div className="border border-2 row-start-2 col-span-4 2xl:row-start-1 2xl:col-span-1">
+        ilearna title
+      </div>
+
+      <div className="border border-2 col-start-2 col-span-3 2xl:col-start-4 2xl:col-span-1">
+        <div className="hidden 2xl:flex space-x-2">
+          <BsGrid3X2Gap /> <MdOutlineList />
+        </div>
+        <div>sort options</div>
+      </div>
+
+      <div className="border border-2 row-start-1 2xl:row-start-2 2xl:col-span-1">
+        filter
+      </div>
+
+      <div className="border border-2 col-span-4 2xl:row-start-2 2xl:col-span-3">
+        courses
+      </div>
+
+      <div className="border border-2 col-span-4 2xl:col-start-3 2xl:col-span-1">
+        <div className="flex justify-center">
+          <Pagination
+            currentPage={currentPage}
+            totalItems={totalItems}
+            itemsPerPage={itemsPerPage}
+            onPageChange={handlePageChange}
+          />
+        </div>
+      </div>
     </div>
   );
 };

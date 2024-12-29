@@ -24,7 +24,7 @@ const Pagination: FC<PaginationProps> = ({
   };
 
   return (
-    <div className="flex items-center space-x-1">
+    <div className="flex items-center space-x-2">
       {/* Previous Button */}
       <button
         className={`px-3 py-1 border rounded-md ${
