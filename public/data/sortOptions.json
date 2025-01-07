@@ -1,32 +1,26 @@
 [
   {
-    "sortOptionId": 1,
-    "sortOptionTitle": "Highest to Lowest Rate",
-    "sortOptionValue": "hlr"
+    "sortLabel": "Highest to Lowest Rate",
+    "sortCode": "hlr"
   },
   {
-    "sortOptionId": 2,
-    "sortOptionTitle": "Lowest to Highest Rate",
-    "sortOptionValue": "lhr"
+    "sortLabel": "Lowest to Highest Rate",
+    "sortCode": "lhr"
   },
   {
-    "sortOptionId": 3,
-    "sortOptionTitle": "Highest to Lowest Price",
-    "sortOptionValue": "hlp"
+    "sortLabel": "Highest to Lowest Price",
+    "sortCode": "hlp"
   },
   {
-    "sortOptionId": 4,
-    "sortOptionTitle": "Lowest to Highest Price",
-    "sortOptionValue": "lhp"
+    "sortLabel": "Lowest to Highest Price",
+    "sortCode": "lhp"
   },
   {
-    "sortOptionId": 5,
-    "sortOptionTitle": "Newest to Oldest",
-    "sortOptionValue": "newest"
+    "sortLabel": "Newest to Oldest",
+    "sortCode": "newest"
   },
   {
-    "sortOptionId": 6,
-    "sortOptionTitle": "Oldest to Newest",
-    "sortOptionValue": "oldest"
+    "sortLabel": "Oldest to Newest",
+    "sortCode": "oldest"
   }
 ]

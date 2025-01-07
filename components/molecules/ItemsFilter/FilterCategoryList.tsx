@@ -17,7 +17,7 @@ const FilterCategories: FC<IFilterCategoriesProps> = ({ onFiltersChange }) => {
     <>
       <button
         onClick={clearFilters}
-        className="text-accent block ml-auto mt-4 me-4 font-semibold"
+        className="text-accent block ml-auto mt-4 me-4 xl:mt-0 xl:me-0 xl:mb-2 font-semibold"
       >
         Clear Filters
       </button>

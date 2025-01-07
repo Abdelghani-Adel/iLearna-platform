@@ -16,10 +16,10 @@ const MobileItemsFilter: FC<IProps> = ({ onFiltersChange }) => {
   const closeMenu = () => setIsOpen(false);
 
   const activeClass = isOpen ? "right-0" : "right-[-100vw]";
-  const menuClass = `fixed top-0 w-[100vw] h-screen z-10 transition-all duration-300 shadow-lg overflow-y-auto ${activeClass}`;
+  const menuClass = `fixed top-0 w-screen  z-10 transition-all duration-300 shadow-lg ${activeClass}`;
 
   return (
-    <div>
+    <>
       <ShowFilters onOpen={openMenu} />
 
       <div className={menuClass}>
@@ -28,7 +28,7 @@ const MobileItemsFilter: FC<IProps> = ({ onFiltersChange }) => {
           onClick={closeMenu}
         />
 
-        <div className="w-[80vw] h-screen z-10 bg-white ml-auto">
+        <div className="w-[80vw] bg-white ml-auto h-screen overflow-y-auto">
           <div className="px-4 py-3 text-2xl border-b border-accent-light w-full">
             <button onClick={closeMenu}>
               <MdKeyboardDoubleArrowRight />
@@ -38,14 +38,14 @@ const MobileItemsFilter: FC<IProps> = ({ onFiltersChange }) => {
           <FilterCategories onFiltersChange={onFiltersChange} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 const ShowFilters = ({ onOpen }: { onOpen: () => void }) => {
   return (
     <button
-      className="flex items-center gap-2 border p-2 rounded-sm justify-center"
+      className="flex items-center gap-2 border p-2 rounded-sm justify-center w-full h-full"
       onClick={onOpen}
     >
       <IoFilterOutline />

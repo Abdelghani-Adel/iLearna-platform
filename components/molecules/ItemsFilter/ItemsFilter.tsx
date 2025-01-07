@@ -13,11 +13,11 @@ const ItemsFilter: FC<IProps> = (props) => {
   const { onFiltersChange } = props;
   return (
     <>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <MobileItemsFilter onFiltersChange={onFiltersChange} />
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <DesktopItemsFilter onFiltersChange={onFiltersChange} />
       </div>
     </>

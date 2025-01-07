@@ -9,6 +9,7 @@ import data from "@/public/data/recordedCourses.json";
 import filterCategories from "@/public/data/filters.json";
 import FilterCategories from "@/components/molecules/ItemsFilter/FilterCategoryList";
 import ItemsFilter from "@/components/molecules/ItemsFilter/ItemsFilter";
+import Sort from "@/components/molecules/Sort";
 
 export interface IFilter {
   category: string;
@@ -63,15 +64,17 @@ const Page = () => {
   };
 
   return (
-    <div className="p-4 grid grid-cols-4 gap-6">
-      <div className="row-start-2 col-span-4 2xl:row-start-1 2xl:col-span-1">
+    <div className="p-4 grid grid-cols-12 gap-x-2 gap-y-4">
+      {/* title */}
+      <div className="row-start-2 col-span-12 xl:row-start-1 xl:col-span-4">
         <h1 className="text-2xl font-bold text-accent">
           iLearna Recorded Courses
         </h1>
       </div>
 
-      <div className="col-start-2 col-span-3 2xl:col-start-4 2xl:col-span-1 flex justify-between items-center">
-        <div className="hidden 2xl:flex space-x-2 text-2xl">
+      {/* sort and view */}
+      <div className="row-start-1 col-span-9 sm:col-span-4 xl:col-start-11 xl:col-span-2 flex gap-3 xl:justify-end items-center">
+        <div className="hidden xl:flex space-x-2 text-2xl">
           <button
             onClick={() => setHorizontal(false)}
             className={`${horizontal ? "text-gray-400" : "text-accent"}`}
@@ -86,14 +89,18 @@ const Page = () => {
           </button>
         </div>
 
-        <div>sort options</div>
+        <div className="w-full">
+          <Sort />
+        </div>
       </div>
 
-      <div className="row-start-1 2xl:row-start-2 2xl:col-span-1">
+      {/* filters */}
+      <div className="row-start-1 col-start-1 col-span-3 sm:col-start-1 sm:col-span-2 xl:row-start-2 xl:col-span-3">
         <ItemsFilter onFiltersChange={handleFiltersChange} />
       </div>
 
-      <div className="col-span-4 2xl:row-start-2 2xl:col-span-3">
+      {/* courses */}
+      <div className="col-span-12 row-start-3 xl:row-start-2 xl:col-span-9">
         <div
           className={`grid grid-cols-1  gap-4 ${
             horizontal ? "grid-cols-1" : "sm:grid-cols-2 lg:grid-cols-3"
@@ -117,7 +124,8 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="col-span-4 2xl:col-start-3 2xl:col-span-1">
+      {/* pagination */}
+      <div className="col-span-12 xl:row-start-3 xl:col-start-4 xl:col-span-9">
         <div className="flex justify-center">
           <Pagination
             currentPage={currentPage}
