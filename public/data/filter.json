@@ -19,7 +19,7 @@
       },
       {
         "filterId": 3,
-        "filterType": "radio",
+        "filterType": "checkbox",
         "filterTitle": "Chemicals",
         "filterValue": "chemicals",
         "itemsTotal": 10
@@ -46,7 +46,7 @@
       },
       {
         "filterId": 6,
-        "filterType": "radio",
+        "filterType": "checkbox",
         "filterTitle": "Production",
         "filterValue": "production",
         "itemsTotal": 10
