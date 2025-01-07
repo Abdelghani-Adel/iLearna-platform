@@ -7,7 +7,8 @@ import { BsGrid3X2Gap } from "react-icons/bs";
 import { MdOutlineList } from "react-icons/md";
 import data from "@/public/data/recordedCourses.json";
 import filterCategories from "@/public/data/filters.json";
-import FilterCategories from "@/components/molecules/FilterCategories";
+import FilterCategories from "@/components/molecules/ItemsFilter/FilterCategoryList";
+import ItemsFilter from "@/components/molecules/ItemsFilter/ItemsFilter";
 
 export interface IFilter {
   category: string;
@@ -89,12 +90,7 @@ const Page = () => {
       </div>
 
       <div className="row-start-1 2xl:row-start-2 2xl:col-span-1">
-        {/* <FilterItems
-          handleFiltersChange={handleFiltersChange}
-          filterCategories={filterCategories}
-        /> */}
-
-        <FilterCategories onFiltersChange={handleFiltersChange} />
+        <ItemsFilter onFiltersChange={handleFiltersChange} />
       </div>
 
       <div className="col-span-4 2xl:row-start-2 2xl:col-span-3">

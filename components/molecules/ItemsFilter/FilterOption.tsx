@@ -1,0 +1,34 @@
+import { IFilter } from "@/app/(with-layout)/courses/page";
+import { IFilterOption } from "@/types/api_responses/IGetFilters";
+import React, { FC } from "react";
+
+interface IProps {
+  option: IFilterOption;
+  onCheckboxChange: (categoryCode: string, optionCode: string) => void;
+  selectedFilters: IFilter[];
+  categoryCode: string;
+}
+
+const FilterOption: FC<IProps> = (props) => {
+  const { option, onCheckboxChange, selectedFilters, categoryCode } = props;
+  return (
+    <div className="flex justify-between items-center border border-accent-light p-2 rounded-sm">
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          id={option.optionCode}
+          name={option.optionCode}
+          checked={selectedFilters.some(
+            (filter) =>
+              filter.category === categoryCode &&
+              filter.filters.includes(option.optionCode)
+          )}
+          onChange={() => onCheckboxChange(categoryCode, option.optionCode)}
+        />
+        <label htmlFor={option.optionCode}>{option.optionLabel}</label>
+      </div>
+    </div>
+  );
+};
+
+export default FilterOption;

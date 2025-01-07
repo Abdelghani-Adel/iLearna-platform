@@ -1,0 +1,57 @@
+import { FC, useState } from "react";
+import { IFilter } from "@/app/(with-layout)/courses/page";
+import { IoFilterOutline } from "react-icons/io5";
+import FilterCategory from "./FilterCategory";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import FilterCategories from "./FilterCategoryList";
+
+interface IProps {
+  onFiltersChange: (filters: IFilter[]) => void;
+}
+
+const MobileItemsFilter: FC<IProps> = ({ onFiltersChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openMenu = () => setIsOpen(true);
+  const closeMenu = () => setIsOpen(false);
+
+  const activeClass = isOpen ? "right-0" : "right-[-100vw]";
+  const menuClass = `fixed top-0 w-[100vw] h-screen z-10 transition-all duration-300 shadow-lg overflow-y-auto ${activeClass}`;
+
+  return (
+    <div>
+      <ShowFilters onOpen={openMenu} />
+
+      <div className={menuClass}>
+        <div
+          className="backdrop-blur-[3px] absolute z-[-1] top-0 left-0 w-full h-full"
+          onClick={closeMenu}
+        />
+
+        <div className="w-[80vw] h-screen z-10 bg-white ml-auto">
+          <div className="px-4 py-3 text-2xl border-b border-accent-light w-full">
+            <button onClick={closeMenu}>
+              <MdKeyboardDoubleArrowRight />
+            </button>
+          </div>
+
+          <FilterCategories onFiltersChange={onFiltersChange} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ShowFilters = ({ onOpen }: { onOpen: () => void }) => {
+  return (
+    <button
+      className="flex items-center gap-2 border p-2 rounded-sm justify-center"
+      onClick={onOpen}
+    >
+      <IoFilterOutline />
+      <span>Filters</span>
+    </button>
+  );
+};
+
+export default MobileItemsFilter;
