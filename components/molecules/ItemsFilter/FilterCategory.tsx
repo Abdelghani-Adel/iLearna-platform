@@ -1,12 +1,11 @@
-import { IFilter } from "@/app/(with-layout)/courses/page";
-import { IFilterCategory } from "@/types/api_responses/IGetFilters";
 import React, { FC } from "react";
 import FilterOption from "./FilterOption";
+import { IFilterCategory, ISelectedCategoryFilters } from "@/types/api/filter";
 
 interface IProps {
   category: IFilterCategory;
   onCheckboxChange: (categoryCode: string, optionCode: string) => void;
-  selectedFilters: IFilter[];
+  selectedFilters: ISelectedCategoryFilters[];
 }
 
 const FilterCategory: FC<IProps> = (props) => {

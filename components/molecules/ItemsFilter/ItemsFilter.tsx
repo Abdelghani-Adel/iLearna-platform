@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import FilterCategories from "./FilterCategoryList";
-import { IFilter } from "@/app/(with-layout)/courses/page";
 import { FC } from "react";
 import MobileItemsFilter from "./MobileItemsFilter";
+import { ISelectedCategoryFilters } from "@/types/api/filter";
 
 interface IProps {
-  onFiltersChange: (filters: IFilter[]) => void;
+  onFiltersChange: (filters: ISelectedCategoryFilters[]) => void;
 }
 
 const ItemsFilter: FC<IProps> = (props) => {

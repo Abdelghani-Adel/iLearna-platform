@@ -10,11 +10,7 @@ import filterCategories from "@/public/data/filters.json";
 import FilterCategories from "@/components/molecules/ItemsFilter/FilterCategoryList";
 import ItemsFilter from "@/components/molecules/ItemsFilter/ItemsFilter";
 import Sort from "@/components/molecules/Sort";
-
-export interface IFilter {
-  category: string;
-  filters: string[];
-}
+import { ISelectedCategoryFilters } from "@/types/api/filter";
 
 const Page = () => {
   const [items, setItems] = useState<any[]>(data);
@@ -23,7 +19,7 @@ const Page = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("");
-  const [filters, setFilters] = useState<IFilter[]>([]);
+  const [filters, setFilters] = useState<ISelectedCategoryFilters[]>([]);
   const [nextPaginateFrom, setNextPaginateFrom] = useState<number>();
   const [nextPaginateTo, setNextPaginateTo] = useState<number>(0);
   const [horizontal, setHorizontal] = useState<boolean>(false);
@@ -59,7 +55,7 @@ const Page = () => {
     setCurrentPage(page);
   };
 
-  const handleFiltersChange = (filters: IFilter[]) => {
+  const handleFiltersChange = (filters: ISelectedCategoryFilters[]) => {
     setFilters(filters);
   };
 

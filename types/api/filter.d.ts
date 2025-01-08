@@ -1,10 +1,15 @@
 export interface IFilterCategory {
-  categoryLabel: string;
   categoryCode: string;
+  categoryLabel: string;
   options: IFilterOption[];
 }
 
 export interface IFilterOption {
   optionLabel: string;
   optionCode: string;
+}
+
+export interface ISelectedCategoryFilters {
+  category: string;
+  filters: string[];
 }
