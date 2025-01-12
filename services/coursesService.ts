@@ -1,14 +1,16 @@
-import courses from "@/public/data/recordedCourses.json";
+import recordedCourses from "@/public/data/recordedCourses.json";
+import liveCourses from "@/public/data/liveCourses.json";
 import { IGetCoursesRequest } from "@/types/api/requests/IGetCoursesRequest";
-import { IGetCoursesResponse } from "@/types/api/responses/IGetCoursesResponse";
+import { IGetItemsResponse } from "@/types/api/responses/IGetItemsResponse";
 
 export async function getRecordedCourses(
   request: IGetCoursesRequest
-): Promise<IGetCoursesResponse> {
+): Promise<IGetItemsResponse> {
+  console.log("Recorded");
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return {
     totalItems: 50,
-    courses,
+    items: recordedCourses,
   };
 }
 
@@ -16,11 +18,11 @@ export async function getRecordedCourseDetails() {}
 
 export async function getLiveCourses(
   request: IGetCoursesRequest
-): Promise<IGetCoursesResponse> {
+): Promise<IGetItemsResponse> {
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return {
     totalItems: 50,
-    courses,
+    items: liveCourses,
   };
 }
 

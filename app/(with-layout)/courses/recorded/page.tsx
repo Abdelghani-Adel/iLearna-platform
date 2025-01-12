@@ -1,8 +1,8 @@
 "use server";
-import Courses from "@/components/routes/courses/Courses";
+import Items from "@/components/molecules/Items/Items";
 import { getRecordedCourses } from "@/services/coursesService";
 import { IGetCoursesRequest } from "@/types/api/requests/IGetCoursesRequest";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 
 const Page = async () => {
   const request: IGetCoursesRequest = {
@@ -17,11 +17,10 @@ const Page = async () => {
 
   return (
     <Suspense>
-      <Courses
+      <Items
         data={courses}
         title="ilearna recorded courses"
-        // fetchFn={() => {}}
-        // filterFn={() => {}}
+        productType="recorded"
       />
     </Suspense>
   );

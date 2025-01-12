@@ -1,8 +1,10 @@
 import { IGetCoursesFilter } from "@/types/api/requests/IGetCoursesRequest";
 import { useEffect, useState } from "react";
 import { IOnFiltersChange } from "./types";
+import useIsFirstRender from "@/hooks/useIsFirstRender";
 
 export const useFilterState = (onFiltersChange: IOnFiltersChange) => {
+  const isFirstRender = useIsFirstRender();
   const [selectedFilters, setSelectedFilters] = useState<IGetCoursesFilter[]>(
     []
   );
@@ -65,6 +67,8 @@ export const useFilterState = (onFiltersChange: IOnFiltersChange) => {
   };
 
   useEffect(() => {
+    if (isFirstRender) return;
+
     applyFilters();
   }, [selectedFilters]);
 
