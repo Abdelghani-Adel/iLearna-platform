@@ -29,7 +29,7 @@ interface IProps {
 }
 
 const Courses: FC<IProps> = (props) => {
-  const { data, fetchFn, filterFn, title } = props;
+  const { data, title } = props;
   const isFirstRender = useIsFirstRender();
   const itemsPerPage = 9;
   const [items, setItems] = useState<ICourse[]>(data.courses);

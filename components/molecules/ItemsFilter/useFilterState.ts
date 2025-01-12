@@ -1,5 +1,5 @@
+import { IGetCoursesFilter } from "@/types/api/requests/IGetCoursesRequest";
 import { useEffect, useState } from "react";
-import { IGetCoursesFilter } from "@/types/api/requests/IGetCourses";
 import { IOnFiltersChange } from "./types";
 
 export const useFilterState = (onFiltersChange: IOnFiltersChange) => {

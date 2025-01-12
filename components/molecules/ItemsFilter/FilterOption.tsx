@@ -1,5 +1,5 @@
 import { IFilterOption } from "@/types/api/filter";
-import { IGetCoursesFilter } from "@/types/api/requests/IGetCourses";
+import { IGetCoursesFilter } from "@/types/api/requests/IGetCoursesRequest";
 import React, { FC } from "react";
 import { v4 } from "uuid";
 

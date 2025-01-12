@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import FilterOption from "./FilterOption";
 import { IFilterCategory } from "@/types/api/filter";
-import { IGetCoursesFilter } from "@/types/api/requests/IGetCourses";
+import { IGetCoursesFilter } from "@/types/api/requests/IGetCoursesRequest";
 
 interface IProps {
   category: IFilterCategory;
