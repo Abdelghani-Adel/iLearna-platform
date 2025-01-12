@@ -1,12 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import FilterCategories from "./FilterCategoryList";
 import { FC } from "react";
+import FilterCategories from "./FilterCategoryList";
 import MobileItemsFilter from "./MobileItemsFilter";
-import { ISelectedCategoryFilters } from "@/types/api/filter";
+import { IOnFiltersChange } from "./types";
 
 interface IProps {
-  onFiltersChange: (filters: ISelectedCategoryFilters[]) => void;
+  onFiltersChange: IOnFiltersChange;
 }
 
 const ItemsFilter: FC<IProps> = (props) => {

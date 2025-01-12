@@ -1,10 +1,11 @@
-import { IFilter } from "@/app/(with-layout)/courses/page";
 import { useEffect, useState } from "react";
+import { IGetCoursesFilter } from "@/types/api/requests/IGetCourses";
+import { IOnFiltersChange } from "./types";
 
-export const useFilterState = (
-  onFiltersChange: (filters: IFilter[]) => void
-) => {
-  const [selectedFilters, setSelectedFilters] = useState<IFilter[]>([]);
+export const useFilterState = (onFiltersChange: IOnFiltersChange) => {
+  const [selectedFilters, setSelectedFilters] = useState<IGetCoursesFilter[]>(
+    []
+  );
 
   const clearFilters = () => {
     setSelectedFilters([]);

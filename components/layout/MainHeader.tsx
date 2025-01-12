@@ -17,7 +17,7 @@ const NavBar: React.FC = () => {
   return (
     <nav className="flex items-center space-x-10 text-sm text-primary">
       <NavLink href="/" label="home" />
-      <NavLink href="/courses" label="courses" />
+      <NavLink href="/courses/recorded" label="courses" />
       <NavLink href="/about-us" label="about" />
       <NavLink href="/contact" label="contact" />
     </nav>

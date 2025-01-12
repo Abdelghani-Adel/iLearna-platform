@@ -1,12 +1,11 @@
 import { FC, useState } from "react";
 import { IoFilterOutline } from "react-icons/io5";
-import FilterCategory from "./FilterCategory";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import FilterCategories from "./FilterCategoryList";
-import { ISelectedCategoryFilters } from "@/types/api/filter";
+import { IOnFiltersChange } from "./types";
 
 interface IProps {
-  onFiltersChange: (filters: ISelectedCategoryFilters[]) => void;
+  onFiltersChange: IOnFiltersChange;
 }
 
 const MobileItemsFilter: FC<IProps> = ({ onFiltersChange }) => {

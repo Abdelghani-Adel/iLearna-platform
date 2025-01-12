@@ -1,12 +1,12 @@
 "use client";
 import categories from "@/public/data/filters.json";
-import FilterCategory from "./FilterCategory";
-import { useFilterState } from "./useFilterState";
 import { FC } from "react";
-import { ISelectedCategoryFilters } from "@/types/api/filter";
+import FilterCategory from "./FilterCategory";
+import { IOnFiltersChange } from "./types";
+import { useFilterState } from "./useFilterState";
 
 interface IFilterCategoriesProps {
-  onFiltersChange: (filters: ISelectedCategoryFilters[]) => void;
+  onFiltersChange: IOnFiltersChange;
 }
 
 const FilterCategories: FC<IFilterCategoriesProps> = ({ onFiltersChange }) => {
