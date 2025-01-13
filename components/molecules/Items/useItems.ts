@@ -1,6 +1,6 @@
+import useIsFirstRender from "@/hooks/useIsFirstRender";
+import useUpdateEffect from "@/hooks/useUpdateEffect";
 import { getRecordedCourses } from "@/services/coursesService";
-import { useState } from "react";
-import { useEffect } from "react";
 import {
   IGetCoursesFilter,
   IGetCoursesRequest,
@@ -9,7 +9,7 @@ import {
   IGetItemsResponse,
   IItem,
 } from "@/types/api/responses/IGetItemsResponse";
-import useIsFirstRender from "@/hooks/useIsFirstRender";
+import { useEffect, useState } from "react";
 
 interface IUseItemsProps {
   data: IGetItemsResponse;
@@ -31,14 +31,7 @@ export const useItems = (props: IUseItemsProps) => {
   const [nextPaginateTo, setNextPaginateTo] = useState<number>(9);
   const [horizontal, setHorizontal] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log("isFirstRender " + isFirstRender);
-    if (isFirstRender) {
-      return;
-    }
-
-    console.log("fetched");
-
+  useUpdateEffect(() => {
     // update items, totalItems, currentPage
     updateItems();
   }, [search, sortBy, filters, nextPaginateFrom, nextPaginateTo]);

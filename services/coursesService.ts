@@ -6,7 +6,6 @@ import { IGetItemsResponse } from "@/types/api/responses/IGetItemsResponse";
 export async function getRecordedCourses(
   request: IGetCoursesRequest
 ): Promise<IGetItemsResponse> {
-  console.log("Recorded");
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return {
     totalItems: 50,
