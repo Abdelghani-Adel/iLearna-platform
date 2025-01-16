@@ -1,14 +1,12 @@
 import useIsFirstRender from "@/hooks/useIsFirstRender";
 import useUpdateEffect from "@/hooks/useUpdateEffect";
-import { IGetCoursesFilter } from "@/types/api/requests/IGetCoursesRequest";
+import { IGetItemsFilter } from "@/types/api/requests/IGetItemsRequest";
 import { useState } from "react";
 import { IOnFiltersChange } from "./types";
 
 export const useFilterState = (onFiltersChange: IOnFiltersChange) => {
   const isFirstRender = useIsFirstRender();
-  const [selectedFilters, setSelectedFilters] = useState<IGetCoursesFilter[]>(
-    []
-  );
+  const [selectedFilters, setSelectedFilters] = useState<IGetItemsFilter[]>([]);
 
   const clearFilters = () => {
     setSelectedFilters([]);

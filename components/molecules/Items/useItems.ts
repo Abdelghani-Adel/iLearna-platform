@@ -1,10 +1,14 @@
 import useIsFirstRender from "@/hooks/useIsFirstRender";
 import useUpdateEffect from "@/hooks/useUpdateEffect";
-import { getRecordedCourses } from "@/services/coursesService";
 import {
-  IGetCoursesFilter,
-  IGetCoursesRequest,
-} from "@/types/api/requests/IGetCoursesRequest";
+  getBooks,
+  getLiveCourses,
+  getRecordedCourses,
+} from "@/services/itemsServices";
+import {
+  IGetItemsFilter,
+  IGetItemsRequest,
+} from "@/types/api/requests/IGetItemsRequest";
 import {
   IGetItemsResponse,
   IItem,
@@ -26,7 +30,7 @@ export const useItems = (props: IUseItemsProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("");
-  const [filters, setFilters] = useState<IGetCoursesFilter[]>([]);
+  const [filters, setFilters] = useState<IGetItemsFilter[]>([]);
   const [nextPaginateFrom, setNextPaginateFrom] = useState<number>(0);
   const [nextPaginateTo, setNextPaginateTo] = useState<number>(9);
   const [horizontal, setHorizontal] = useState<boolean>(false);
@@ -46,7 +50,7 @@ export const useItems = (props: IUseItemsProps) => {
 
   const updateItems = async () => {
     // preparing the request
-    const reqBody: IGetCoursesRequest = {
+    const reqBody: IGetItemsRequest = {
       search,
       sortBy,
       filters,
@@ -54,8 +58,18 @@ export const useItems = (props: IUseItemsProps) => {
       paginateTo: nextPaginateTo,
     };
 
-    // calling the api
-    const response = await getRecordedCourses(reqBody);
+    let response: IGetItemsResponse = {
+      items: [],
+      totalItems: 0,
+    };
+
+    if (productType == "recorded") {
+      response = await getRecordedCourses(reqBody);
+    } else if (productType == "live") {
+      response = await getLiveCourses(reqBody);
+    } else {
+      response = await getBooks(reqBody);
+    }
 
     // update the items
     setItems(response.items);
@@ -71,7 +85,7 @@ export const useItems = (props: IUseItemsProps) => {
   const handlePageChange = (page: number) => setCurrentPage(page);
 
   // to be used in the filter component
-  const handleFiltersChange = (filters: IGetCoursesFilter[]) => {
+  const handleFiltersChange = (filters: IGetItemsFilter[]) => {
     setFilters(filters);
   };
 

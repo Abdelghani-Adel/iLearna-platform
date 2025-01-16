@@ -1,10 +1,11 @@
 import recordedCourses from "@/public/data/recordedCourses.json";
 import liveCourses from "@/public/data/liveCourses.json";
-import { IGetCoursesRequest } from "@/types/api/requests/IGetCoursesRequest";
+import books from "@/public/data/books.json";
+import { IGetItemsRequest } from "@/types/api/requests/IGetItemsRequest";
 import { IGetItemsResponse } from "@/types/api/responses/IGetItemsResponse";
 
 export async function getRecordedCourses(
-  request: IGetCoursesRequest
+  request: IGetItemsRequest
 ): Promise<IGetItemsResponse> {
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return {
@@ -16,7 +17,7 @@ export async function getRecordedCourses(
 export async function getRecordedCourseDetails() {}
 
 export async function getLiveCourses(
-  request: IGetCoursesRequest
+  request: IGetItemsRequest
 ): Promise<IGetItemsResponse> {
   await new Promise((resolve) => setTimeout(resolve, 3000));
   return {
@@ -28,3 +29,13 @@ export async function getLiveCourses(
 export async function getLiveCourseDetails() {}
 
 export async function getCourseFilters() {}
+
+export async function getBooks(
+  request: IGetItemsRequest
+): Promise<IGetItemsResponse> {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  return {
+    totalItems: 50,
+    items: books,
+  };
+}

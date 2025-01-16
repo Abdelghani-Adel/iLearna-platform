@@ -1,10 +1,10 @@
 import Items from "@/components/molecules/Items/Items";
-import { getLiveCourses } from "@/services/coursesService";
-import { IGetCoursesRequest } from "@/types/api/requests/IGetCoursesRequest";
+import { getLiveCourses } from "@/services/itemsServices";
+import { IGetItemsRequest } from "@/types/api/requests/IGetItemsRequest";
 import React, { Suspense } from "react";
 
 const page = async () => {
-  const request: IGetCoursesRequest = {
+  const request: IGetItemsRequest = {
     search: "",
     sortBy: "",
     paginateFrom: 0,
