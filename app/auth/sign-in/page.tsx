@@ -55,7 +55,7 @@ const Login = () => {
       </FormProvider>
 
       <div className="mt-6 text-center text-sm text-customGray">
-        Don't have an account?{" "}
+        Don t have an account?{" "}
         <Link href="sign-up" className="text-accent hover:underline">
           Signup
         </Link>

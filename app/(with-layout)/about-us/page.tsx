@@ -52,9 +52,9 @@ const Page = () => {
         <p className="font-light text-sm lg:ml-[4rem] relative lg:after:content-[''] lg:after:absolute lg:after:top-[6px] lg:after:left-[-4.5rem] lg:after:h-[2px] lg:after:w-[4rem] lg:after:bg-accent">
           i.learna is your gateway to world-class education. We bring together
           passionate instructors, ambitious learners, and cutting-edge tools to
-          create a learning experience that’s impactful, flexible, and tailored
-          to your goals. Whether you’re advancing your career, mastering a new
-          skill, or exploring a passion, we’re here to make it possible.
+          create a learning experience that s impactful, flexible, and tailored
+          to your goals. Whether you re advancing your career, mastering a new
+          skill, or exploring a passion, we re here to make it possible.
         </p>
 
         <Link
