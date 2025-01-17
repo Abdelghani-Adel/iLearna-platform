@@ -1,12 +1,15 @@
+"use client";
 import RatingRO from "@/components/ui/RatingRO";
 import { IItemCardAuthor } from "@/types/api/responses/Items";
+import { encrypt } from "@/utils/Cryptojs";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import React, { FC } from "react";
 import { BiBookAlt } from "react-icons/bi";
 import { CgSandClock } from "react-icons/cg";
 
 interface ItemCardProps {
-  baseHref: string;
+  id: string;
   image: string;
   rating: number;
   title: string;
@@ -29,11 +32,19 @@ const ItemCard: FC<ItemCardProps> = (props) => {
 };
 
 const ItemCardVertical: FC<ItemCardProps> = (props) => {
-  const { baseHref, image, rating, title, price, oldPrice } = props;
+  const { id, image, rating, title, price, oldPrice } = props;
   const { duration, durationDesc, description, tags, author } = props;
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const URL = `${pathname}/${encrypt(id)}`;
+  const navigate = () => router.push(URL);
+
   return (
-    <div className="border border-accent-light rounded-md">
+    <div
+      className="border border-accent-light rounded-md cursor-pointer"
+      onClick={navigate}
+    >
       <div className="relative w-full h-56">
         <Image className="object-cover" src={image} alt={title} fill />
 
@@ -94,7 +105,7 @@ const ItemCardVertical: FC<ItemCardProps> = (props) => {
 };
 
 const ItemCardHorizontal: FC<ItemCardProps> = (props) => {
-  const { baseHref, image, rating, title, price, oldPrice } = props;
+  const { image, rating, title, price, oldPrice } = props;
   const { duration, durationDesc, description, tags, author } = props;
 
   return (

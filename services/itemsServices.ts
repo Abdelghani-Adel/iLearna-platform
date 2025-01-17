@@ -60,4 +60,4 @@ export async function getRecordedCourseDetails() {}
 
 export async function getLiveCourseDetails() {}
 
-export async function getCourseFilters() {}
+export async function getBookDetails() {}

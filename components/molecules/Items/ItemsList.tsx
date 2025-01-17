@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ItemCard from "./ItemCard";
 import { IItem } from "@/types/api/responses/Items";
@@ -17,7 +18,7 @@ const ItemsList = ({ items, horizontal }: IProps) => {
       {items.map((item) => (
         <ItemCard
           key={item.id}
-          baseHref=""
+          id={item.id}
           title={item.title}
           duration={item.duration}
           durationDesc={item.durationDesc}
