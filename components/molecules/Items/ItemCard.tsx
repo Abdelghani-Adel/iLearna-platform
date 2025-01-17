@@ -1,4 +1,5 @@
 import RatingRO from "@/components/ui/RatingRO";
+import { IItemCardAuthor } from "@/types/api/responses/IGetItemsResponse";
 import Image from "next/image";
 import React, { FC } from "react";
 import { BiBookAlt } from "react-icons/bi";
@@ -15,10 +16,7 @@ interface ItemCardProps {
   durationDesc: string;
   description: string;
   tags?: string[];
-  author?: {
-    name: string;
-    image: string;
-  };
+  author?: IItemCardAuthor;
   horizontal?: boolean;
 }
 
@@ -38,6 +36,14 @@ const ItemCardVertical: FC<ItemCardProps> = (props) => {
     <div className="border border-accent-light rounded-md">
       <div className="relative w-full h-56">
         <Image className="object-cover" src={image} alt={title} fill />
+
+        {tags && (
+          <div className="absolute top-3 left-3 flex flex-col space-y-3">
+            {tags.map((tag) => (
+              <p className="bg-accent text-white py-1 px-5 rounded-md">{tag}</p>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="p-4 space-y-2">
@@ -69,9 +75,12 @@ const ItemCardVertical: FC<ItemCardProps> = (props) => {
               <Image
                 src={author.image}
                 alt={author.name}
-                width={20}
-                height={20}
+                width={30}
+                height={30}
+                className="rounded-full"
               />
+
+              <p className="font-semibold text-customGray">{author.name}</p>
             </div>
           )}
 
@@ -92,6 +101,14 @@ const ItemCardHorizontal: FC<ItemCardProps> = (props) => {
     <div className="border border-accent-light rounded-md flex">
       <div className="relative w-1/3 h-56">
         <Image className="object-cover" src={image} alt={title} fill />
+
+        {tags && (
+          <div className="absolute top-3 left-3 flex flex-col space-y-3">
+            {tags.map((tag) => (
+              <p className="bg-accent text-white py-1 px-5 rounded-md">{tag}</p>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="p-4 w-2/3 flex flex-col justify-between">
@@ -123,9 +140,12 @@ const ItemCardHorizontal: FC<ItemCardProps> = (props) => {
               <Image
                 src={author.image}
                 alt={author.name}
-                width={20}
-                height={20}
+                width={30}
+                height={30}
+                className="rounded-full"
               />
+
+              <p className="font-semibold text-customGray">{author.name}</p>
             </div>
           )}
 

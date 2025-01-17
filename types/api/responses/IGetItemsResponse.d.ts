@@ -13,4 +13,11 @@ export interface IItem {
   price: string;
   oldPrice: string;
   description: string;
+  tags: string[];
+  author: IItemCardAuthor;
+}
+
+export interface IItemCardAuthor {
+  name: string;
+  image: string;
 }

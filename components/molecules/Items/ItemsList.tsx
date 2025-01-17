@@ -26,6 +26,8 @@ const ItemsList = ({ items, horizontal }: IProps) => {
           price={item.price}
           oldPrice={item.oldPrice}
           description={item.description}
+          tags={item.tags}
+          author={item.author}
           horizontal={horizontal}
         />
       ))}
