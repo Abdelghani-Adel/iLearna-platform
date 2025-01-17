@@ -2,7 +2,7 @@
 import ItemsFilter from "@/components/molecules/ItemsFilter/ItemsFilter";
 import Sort from "@/components/molecules/Sort";
 import Pagination from "@/components/ui/Pagination";
-import { IGetItemsResponse } from "@/types/api/responses/IGetItemsResponse";
+import { IGetItemsResponse } from "@/types/api/responses/Items";
 import { FC } from "react";
 import GridOptions from "./GridOptions";
 import ItemsList from "./ItemsList";

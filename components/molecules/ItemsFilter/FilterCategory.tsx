@@ -1,10 +1,12 @@
 import React, { FC } from "react";
 import FilterOption from "./FilterOption";
-import { IFilterCategory } from "@/types/api/filter";
-import { IGetItemsFilter } from "@/types/api/requests/IGetItemsRequest";
+import {
+  IGetItemsFilter,
+  IItemsFilterCategory,
+} from "@/types/api/requests/Items";
 
 interface IProps {
-  category: IFilterCategory;
+  category: IItemsFilterCategory;
   onCheckboxChange: (categoryCode: string, optionCode: string) => void;
   selectedFilters: IGetItemsFilter[];
 }

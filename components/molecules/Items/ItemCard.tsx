@@ -1,5 +1,5 @@
 import RatingRO from "@/components/ui/RatingRO";
-import { IItemCardAuthor } from "@/types/api/responses/IGetItemsResponse";
+import { IItemCardAuthor } from "@/types/api/responses/Items";
 import Image from "next/image";
 import React, { FC } from "react";
 import { BiBookAlt } from "react-icons/bi";

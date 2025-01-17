@@ -1,6 +1,6 @@
 import Items from "@/components/molecules/Items/Items";
 import { getLiveCourses } from "@/services/itemsServices";
-import { IGetItemsRequest } from "@/types/api/requests/IGetItemsRequest";
+import { IGetItemsRequest } from "@/types/api/requests/Items";
 import React, { Suspense } from "react";
 
 const page = async () => {

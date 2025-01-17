@@ -1,6 +1,6 @@
 import React from "react";
 import ItemCard from "./ItemCard";
-import { IItem } from "@/types/api/responses/IGetItemsResponse";
+import { IItem } from "@/types/api/responses/Items";
 
 interface IProps {
   items: IItem[];

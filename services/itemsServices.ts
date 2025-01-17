@@ -1,8 +1,8 @@
 import recordedCourses from "@/public/data/recordedCourses.json";
 import liveCourses from "@/public/data/liveCourses.json";
 import books from "@/public/data/books.json";
-import { IGetItemsRequest } from "@/types/api/requests/IGetItemsRequest";
-import { IGetItemsResponse } from "@/types/api/responses/IGetItemsResponse";
+import { IGetItemsRequest } from "@/types/api/requests/Items";
+import { IGetItemsResponse } from "@/types/api/responses/Items";
 
 export async function getRecordedCourses(
   request: IGetItemsRequest
