@@ -56,8 +56,8 @@ export async function getBooksFilters(): Promise<IItemsFiltersResponse> {
   return filters;
 }
 
-export async function getRecordedCourseDetails() {}
+export async function getRecordedCourseDetails(id: string) {}
 
-export async function getLiveCourseDetails() {}
+export async function getLiveCourseDetails(id: string) {}
 
-export async function getBookDetails() {}
+export async function getBookDetails(id: string) {}
