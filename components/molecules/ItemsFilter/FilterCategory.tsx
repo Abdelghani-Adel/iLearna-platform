@@ -1,9 +1,7 @@
 import React, { FC } from "react";
 import FilterOption from "./FilterOption";
-import {
-  IGetItemsFilter,
-  IItemsFilterCategory,
-} from "@/types/api/requests/Items";
+import { IItemsFilterCategory } from "@/types/api/responses/Items";
+import { IGetItemsFilter } from "@/types/api/requests/Items";
 
 interface IProps {
   category: IItemsFilterCategory;

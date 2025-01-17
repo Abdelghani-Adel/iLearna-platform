@@ -21,3 +21,16 @@ export interface IItemCardAuthor {
   name: string;
   image: string;
 }
+
+export type IItemsFiltersResponse = IItemsFilterCategory[];
+
+export interface IItemsFilterCategory {
+  categoryCode: string;
+  categoryLabel: string;
+  options: IItemsFilterOption[];
+}
+
+export interface IItemsFilterOption {
+  optionLabel: string;
+  optionCode: string;
+}

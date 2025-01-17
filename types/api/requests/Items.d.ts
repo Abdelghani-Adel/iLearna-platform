@@ -10,14 +10,3 @@ export interface IGetItemsFilter {
   category: string;
   filters: string[];
 }
-
-export interface IItemsFilterCategory {
-  categoryCode: string;
-  categoryLabel: string;
-  options: IItemsFilterOption[];
-}
-
-export interface IItemsFilterOption {
-  optionLabel: string;
-  optionCode: string;
-}

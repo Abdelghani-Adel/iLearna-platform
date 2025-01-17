@@ -1,7 +1,5 @@
-import {
-  IGetItemsFilter,
-  IItemsFilterOption,
-} from "@/types/api/requests/Items";
+import { IGetItemsFilter } from "@/types/api/requests/Items";
+import { IItemsFilterOption } from "@/types/api/responses/Items";
 import React, { FC } from "react";
 import { v4 } from "uuid";
 
