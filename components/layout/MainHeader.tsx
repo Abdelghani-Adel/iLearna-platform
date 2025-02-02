@@ -27,9 +27,8 @@ const MainHeader: React.FC = () => {
       <div className="hidden lg:block ml-5 w-full">
         <div className="flex items-center">
           <NavBar />
-          <div className="ml-auto">
-            <MainHeaderActions />
-          </div>
+
+          <MainHeaderActions />
         </div>
       </div>
 

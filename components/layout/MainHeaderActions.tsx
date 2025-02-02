@@ -4,12 +4,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { FC, useEffect, useState } from "react";
 import { useDetectClickOutside } from "react-detect-click-outside";
+import { FiShoppingCart } from "react-icons/fi";
+import SearchInput from "../ui/SearchInput";
 
 const MainHeaderActions = () => {
   return (
-    <div>
+    <div className="flex items-center space-x-4 ml-auto">
+      <SearchAction />
+      <CartActions />
       <ProfileActions />
     </div>
+  );
+};
+
+const SearchAction: FC = () => {
+  return <SearchInput className="w-72" />;
+};
+
+const CartActions: FC = () => {
+  return (
+    <button className="shrink-0">
+      <Link href="/cart">
+        <FiShoppingCart className="text-2xl text-primary" />
+      </Link>
+    </button>
   );
 };
 
@@ -25,7 +43,7 @@ const ProfileActions: FC = () => {
   const clickOutsideRef = useDetectClickOutside({ onTriggered: closeMenu });
 
   return (
-    <div>
+    <div className="shrink-0">
       <button onClick={toggleMenu}>
         <Image
           width={1024}
