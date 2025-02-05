@@ -17,8 +17,8 @@ const Page = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold">Your Profile</h1>
-      <h2 className="text-lg font-semibold mb-4">Basic Information</h2>
+      <h1 className="text-xl lg:text-2xl lg:font-semibold">Your Profile</h1>
+      <h2 className="text-md mb-4">Basic Information</h2>
 
       <div className="space-y-4">
         <FormProvider {...formMethods}>
@@ -67,7 +67,7 @@ const Page = () => {
           />
 
           <div className="flex justify-end gap-4"></div>
-          <button className="bg-accent hover:bg-accent-dark transition-all duration-300 text-white py-2 px-5 rounded-lg ml-auto block">
+          <button className="bg-accent hover:bg-accent-dark transition-all duration-300 text-white py-2 px-5 rounded-lg ml-auto block w-full lg:w-max">
             Save Changes
           </button>
         </FormProvider>
