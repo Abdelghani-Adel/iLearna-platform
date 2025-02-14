@@ -32,6 +32,7 @@
     "uuid": "^11.0.3"
   },
   "devDependencies": {
+    "@storybook/nextjs": "8.0.0",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
