@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { CiLock } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
 import { GrMenu } from "react-icons/gr";
+import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { MdPayment } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
 
@@ -21,7 +22,7 @@ const Layout = ({ children }: Readonly<LayoutProps>) => {
         <DesktopNav />
       </div>
 
-      <section className="w-full py-4">{children}</section>
+      <section className="w-full py-16 pl-16 pr-28">{children}</section>
     </main>
   );
 };
@@ -88,6 +89,16 @@ export const ProfileNav = () => {
         <button className="flex items-center gap-3 px-4 py-2">
           <CiLock />
           <span>Change Password</span>
+        </button>
+      </Link>
+
+      <Link
+        href="/profile/privacy"
+        className={`rounded-md ${isActive("/change-password")}`}
+      >
+        <button className="flex items-center gap-3 px-4 py-2">
+          <IoShieldCheckmarkOutline />
+          <span>Privacy</span>
         </button>
       </Link>
 
