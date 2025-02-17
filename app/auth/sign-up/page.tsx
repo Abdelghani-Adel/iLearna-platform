@@ -110,7 +110,11 @@ const SignUp = () => {
           />
 
           {activeTab === "freelancer" && (
-            <InputFile name="cv" label="Upload your CV" />
+            <InputFile
+              name="cv"
+              label="Upload your CV"
+              accept=".pdf, .doc, .docx, .RTF"
+            />
           )}
 
           <button type="submit" className="btn btn-accent block w-full">
