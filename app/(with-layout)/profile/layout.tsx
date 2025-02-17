@@ -21,36 +21,10 @@ const Layout = ({ children }: Readonly<LayoutProps>) => {
         <DesktopNav />
       </div>
 
-      {/* <div className="lg:hiddn">
-        <ProfileMobileNav />
-      </div> */}
-
       <section className="w-full py-4">{children}</section>
     </main>
   );
 };
-
-// export const ProfileMobileNav = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   // To close the mobile menu when navigating
-//   const pathname = usePathname();
-//   useEffect(() => {
-//     setIsMenuOpen(false);
-//   }, [pathname]);
-
-//   return (
-//     <div>
-//       <button className="lg:hidden" onClick={() => setIsMenuOpen(true)}>
-//         <GrMenu className="h-6 w-6" />
-//       </button>
-
-//       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
-//         <Nav />
-//       </MobileMenu>
-//     </div>
-//   );
-// };
 
 const DesktopNav = () => {
   return (

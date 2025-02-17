@@ -18,6 +18,10 @@
     left: -15px;
     @apply bg-primary;
   }
+
+  .app-wrapper {
+    @apply 2xl:w-[1440px] 2xl:m-auto;
+  }
 }
 
 .slick-dots.slick-thumb {
