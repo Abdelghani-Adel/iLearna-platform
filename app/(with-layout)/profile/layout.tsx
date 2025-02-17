@@ -8,6 +8,7 @@ import { CiLock } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
 import { GrMenu } from "react-icons/gr";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
+import { LiaIdCardAltSolid } from "react-icons/lia";
 import { MdPayment } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
 
@@ -94,11 +95,21 @@ export const ProfileNav = () => {
 
       <Link
         href="/profile/privacy"
-        className={`rounded-md ${isActive("/change-password")}`}
+        className={`rounded-md ${isActive("/privacy")}`}
       >
         <button className="flex items-center gap-3 px-4 py-2">
           <IoShieldCheckmarkOutline />
           <span>Privacy</span>
+        </button>
+      </Link>
+
+      <Link
+        href="/profile/become-freelancer"
+        className={`rounded-md ${isActive("/become-freelancer")}`}
+      >
+        <button className="flex items-center gap-3 px-4 py-2">
+          <LiaIdCardAltSolid />
+          <span>Become a Freelancer</span>
         </button>
       </Link>
 
