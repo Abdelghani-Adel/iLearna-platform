@@ -4,7 +4,7 @@ import { FC } from "react";
 import { useFormContext } from "react-hook-form";
 import InputLabel from "./InputLabel";
 import InputError from "./InputError";
-import { Check } from "@mui/icons-material";
+import { FaCheck } from "react-icons/fa6";
 
 interface IProps {
   name: string;
@@ -34,7 +34,7 @@ const InputCheckbox: FC<IProps> = ({ name, label, rules }) => {
           isChecked ? "bg-gray-900 border-gray-900" : "border-gray-500"
         }`}
       >
-        {isChecked && <Check className="w-4 h-4 text-white" />}
+        {isChecked && <FaCheck className="w-4 h-4 text-white" />}
       </label>
 
       <InputLabel name={name} label={label} />

@@ -4,7 +4,11 @@ import { useForm, FormProvider } from "react-hook-form";
 import React from "react";
 
 const Page = () => {
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      agree: true,
+    },
+  });
 
   const onSubmit = (data: any) => {
     console.log(data);
