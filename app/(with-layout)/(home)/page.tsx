@@ -15,6 +15,7 @@ import { SiMinds } from "react-icons/si";
 import { GiBrain } from "react-icons/gi";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { SlBookOpen } from "react-icons/sl";
+import TopInstructors from "@/components/molecules/TopInstructors";
 
 export const metadata: Metadata = {
   title: "I Learna",
@@ -140,7 +141,11 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="ml-5 2xl:max-w-sm 2xl:ml-20">
+        <TopInstructors />
+      </section>
+
+      <section>
+        <div className="ml-5 2xl:max-w-sm">
           <SectionTitle>What our users say about iLearna</SectionTitle>
         </div>
         <Carousel settings={carouselSettings}>
