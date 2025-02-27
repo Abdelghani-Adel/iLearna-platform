@@ -1,3 +1,5 @@
+"use client";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 import { ICourseOverview } from "@/types/api/responses/IGetCourseDetails";
 import React, { FC } from "react";
 import { FaCheck } from "react-icons/fa6";
@@ -9,9 +11,16 @@ interface IProps {
 
 const CourseOverview: FC<IProps> = ({ overview }) => {
   return (
-    <section className="mt-16 max-w-4xl" id="overview">
-      <h2 className="text-2xl font-semibold">About This Course</h2>
-      <p className="mt-8">{overview.desc}</p>
+    <section className="mt-16" id="overview">
+      <div className="flex justify-between gap-10">
+        <div>
+          <h2 className="text-2xl font-semibold">About This Course</h2>
+          <p className="mt-8">{overview.desc}</p>
+        </div>
+        <div className="shrink-0 w-96 h-52 ">
+          <VideoPlayer />
+        </div>
+      </div>
 
       <h3 className="text-2xl font-semibold mt-12">What you'll learn</h3>
       <div className="mt-8 flex flex-wrap gap-y-6">

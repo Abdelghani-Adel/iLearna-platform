@@ -4,18 +4,10 @@ import CourseModules from "@/components/routes/course-details/CourseModules";
 import CourseOverview from "@/components/routes/course-details/CourseOverview";
 import CourseReviews from "@/components/routes/course-details/CourseReviews";
 import CourseTabs from "@/components/routes/course-details/CourseTabs";
-import RatingRO from "@/components/ui/RatingRO";
 import { getRecordedCourseDetails } from "@/services/itemsServices";
 import { decrypt } from "@/utils/Cryptojs";
-import Image from "next/image";
 import Link from "next/link";
-import React, { FC } from "react";
-import { AiFillLike } from "react-icons/ai";
-import { FaCheck, FaRegHeart } from "react-icons/fa6";
-import { IoNewspaperOutline, IoStar } from "react-icons/io5";
-import { MdOndemandVideo } from "react-icons/md";
-import { PiBookOpenText } from "react-icons/pi";
-import { v4 } from "uuid";
+import { FC } from "react";
 
 interface PageProps {
   params: {
@@ -39,7 +31,7 @@ const Page: FC<PageProps> = async ({ params }) => {
 
       <CourseReviews reviews={details.reviews} />
 
-      <section className="mt-16">
+      <section className="mt-16" id="instructor">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-semibold">Instructor Courses</h2>
 

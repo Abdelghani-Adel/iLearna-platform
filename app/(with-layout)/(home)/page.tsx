@@ -1,6 +1,7 @@
 import Faq from "@/components/molecules/Faq";
 import TopInstructors from "@/components/molecules/TopInstructors";
 import HomeCarousel from "@/components/routes/home/HomeCarousel";
+import HomeCTA from "@/components/routes/home/HomeCTA";
 import HomeFeatures from "@/components/routes/home/HomeFeatures";
 import UsersReviews from "@/components/routes/home/UsersReviews";
 import { baseMetadata } from "@/utils/baseMetadata";
@@ -24,6 +25,10 @@ export default function Home() {
 
       <section>
         <TopInstructors />
+      </section>
+
+      <section>
+        <HomeCTA />
       </section>
 
       <section>
