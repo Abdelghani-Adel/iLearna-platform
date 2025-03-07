@@ -15,7 +15,9 @@ const Page = async () => {
       <section className="grid grid-cols-3 gap-8 p-8">
         {myCourses &&
           myCourses.length > 0 &&
-          myCourses.map((course) => <MyCourseCard course={course} />)}
+          myCourses.map((course) => (
+            <MyCourseCard key={course.id} course={course} />
+          ))}
       </section>
 
       {myCourses.length > 0 && (

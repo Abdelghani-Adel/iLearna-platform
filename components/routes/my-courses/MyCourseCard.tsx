@@ -1,10 +1,11 @@
+import ProgressBar from "@/components/ui/ProgressBar";
 import { IMyCourse } from "@/types/api/responses/user";
 import Image from "next/image";
 import React, { FC } from "react";
 
 const MyCourseCard: FC<{ course: IMyCourse }> = ({ course }) => {
   return (
-    <div className="drop-shadow-md bg-white rounded-lg">
+    <div className="drop-shadow-md bg-white rounded-lg overflow-hidden">
       <div className="relative w-full h-56">
         <Image src={course.image} alt={course.title} fill />
 
@@ -18,9 +19,9 @@ const MyCourseCard: FC<{ course: IMyCourse }> = ({ course }) => {
       </div>
 
       <div className="p-4">
-        <h2>{course.title}</h2>
+        <h2 className="mb-3 text-primary font-semibold">{course.title}</h2>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-3">
           <Image
             src={course.author.image}
             alt={course.author.name}
@@ -31,6 +32,12 @@ const MyCourseCard: FC<{ course: IMyCourse }> = ({ course }) => {
 
           <p className="font-semibold text-customGray">{course.author.name}</p>
         </div>
+        <ProgressBar
+          rating={(course.progress.current / course.progress.total) * 100}
+        />
+        <p className="w-max ml-auto text-sm text-gray-500">
+          Module {course.progress.current} of {course.progress.total}
+        </p>
       </div>
     </div>
   );
