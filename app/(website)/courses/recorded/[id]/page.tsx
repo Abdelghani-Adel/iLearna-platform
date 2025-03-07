@@ -40,7 +40,7 @@ const Page: FC<PageProps> = async ({ params }) => {
           </Link>
         </div>
 
-        <div className="flex justify-around mt-8">
+        <div className="flex flex-col 2xl:flex-row gap-y-5 justify-around mt-8">
           {details.author.courses.map((course) => (
             <ItemCard
               key={course.id}

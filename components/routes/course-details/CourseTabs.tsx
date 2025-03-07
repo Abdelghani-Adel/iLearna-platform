@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const CourseTabs = () => {
   return (
-    <section className="mt-28">
+    <section className="hidden 2xl:block 2xl:mt-28">
       <div className="border-b">
         <div className="flex space-x-6">
           <ScrollLink

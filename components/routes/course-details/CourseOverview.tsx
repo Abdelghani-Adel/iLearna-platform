@@ -11,30 +11,30 @@ interface IProps {
 
 const CourseOverview: FC<IProps> = ({ overview }) => {
   return (
-    <section className="mt-16" id="overview">
-      <div className="flex justify-between gap-10">
+    <section className="mt-28 2xl:mt-16" id="overview">
+      <div className="flex flex-col 2xl:flex-row justify-between gap-10">
         <div>
           <h2 className="text-2xl font-semibold">About This Course</h2>
           <p className="mt-8">{overview.desc}</p>
         </div>
-        <div className="shrink-0 w-96 h-52 ">
+        <div className="shrink-0 2xl:w-96 h-52">
           <VideoPlayer />
         </div>
       </div>
 
       <h3 className="text-2xl font-semibold mt-12">What you'll learn</h3>
-      <div className="mt-8 flex flex-wrap gap-y-6">
+      <div className="mt-8 flex flex-col 2xl:flex-row flex-wrap gap-y-6">
         {overview.learningPoints.map((point) => (
-          <div key={v4()} className="w-1/2 flex items-center gap-2">
+          <div key={v4()} className="2xl:w-1/2 flex items-center gap-2">
             <FaCheck /> <p>{point}</p>
           </div>
         ))}
       </div>
 
       <h3 className="text-2xl font-semibold mt-12">Pre-Requirements</h3>
-      <div className="mt-8 flex flex-wrap gap-y-6">
+      <div className="mt-8 flex flex-col 2xl:flex-row flex-wrap gap-y-6">
         {overview.prerequesits.map((point) => (
-          <div key={v4()} className="w-1/2 flex items-center gap-2">
+          <div key={v4()} className="2xl:w-1/2 flex items-center gap-2">
             <FaCheck /> <p>{point}</p>
           </div>
         ))}

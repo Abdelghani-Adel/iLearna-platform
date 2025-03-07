@@ -5,14 +5,14 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const HomeCTA = () => {
   return (
-    <div className="bg-gray-100 p-10 flex gap-20">
-      <div className="w-1/2 bg-white rounded-xl overflow-hidden">
+    <div className="bg-gray-100 p-5 2xl:p-10 flex flex-col 2xl:flex-row gap-5 2xl:gap-20">
+      <div className="2xl:w-1/2 bg-white rounded-xl overflow-hidden">
         <Image
           src="/images/cta1.webp"
           alt=""
           width={4096}
           height={2731}
-          className="w-full h-96"
+          className="w-full h-60 2xl:h-96"
         />
 
         <div className="p-3">
@@ -35,13 +35,13 @@ const HomeCTA = () => {
         </div>
       </div>
 
-      <div className="w-1/2 bg-white rounded-xl overflow-hidden">
+      <div className="2xl:w-1/2 bg-white rounded-xl overflow-hidden">
         <Image
           src="/images/cta2.png"
           alt=""
           width={4096}
           height={2731}
-          className="w-full h-96"
+          className="w-full h-60 2xl:h-96"
         />
 
         <div className="p-3">
