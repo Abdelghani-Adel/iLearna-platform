@@ -1,10 +1,10 @@
 import Empty from "@/components/molecules/Empty";
 import MyCourseCard from "@/components/routes/my-courses/MyCourseCard";
-import { getMyCourses } from "@/services/userServices";
+import { getMyCoursesList } from "@/services/userServices";
 import React from "react";
 
 const Page = async () => {
-  const myCourses = await getMyCourses();
+  const myCourses = await getMyCoursesList();
 
   return (
     <main className="py-5">

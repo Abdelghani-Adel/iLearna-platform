@@ -1,17 +1,17 @@
 import MyCourses from "@/public/data/myCourses.json";
-import courseModules from "@/public/data/MyCourseModules.json";
+import myCourseDetails from "@/public/data/MyCourseDetails.json";
 import { IMyCourse } from "@/types/api/responses/user";
 
-export async function getMyCourses(): Promise<IMyCourse[]> {
+export async function getMyCoursesList(): Promise<IMyCourse[]> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return MyCourses;
 }
 
-export async function getCourseModules(courseId: string) {
+export async function getMyCourseDetails(courseId: string) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  return courseModules;
+  return myCourseDetails;
 }
 
 export async function getCourseLesson(lessonId: string) {}
