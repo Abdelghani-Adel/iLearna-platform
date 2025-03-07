@@ -66,7 +66,9 @@ const Page = () => {
             options={[]}
           />
 
-          <button className="btn btn-accent block ml-auto">Save Changes</button>
+          <button className="btn btn-accent block ml-auto w-full 2xl:w-auto">
+            Save Changes
+          </button>
         </FormProvider>
       </div>
     </>

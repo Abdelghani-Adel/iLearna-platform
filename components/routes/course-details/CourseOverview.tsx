@@ -17,7 +17,7 @@ const CourseOverview: FC<IProps> = ({ overview }) => {
           <h2 className="text-2xl font-semibold">About This Course</h2>
           <p className="mt-8">{overview.desc}</p>
         </div>
-        <div className="shrink-0 2xl:w-96 h-52">
+        <div className="shrink-0 2xl:w-96 h-52 rounded-xl overflow-hidden">
           <VideoPlayer />
         </div>
       </div>

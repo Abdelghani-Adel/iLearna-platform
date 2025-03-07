@@ -14,7 +14,9 @@ const Layout = ({ children }: Readonly<LayoutProps>) => {
         <DesktopNav />
       </div>
 
-      <section className="w-full py-16 pl-16 pr-28">{children}</section>
+      <section className="w-full py-6 2xl:py-16 2xl:pl-16 2xl:pr-28">
+        {children}
+      </section>
     </main>
   );
 };

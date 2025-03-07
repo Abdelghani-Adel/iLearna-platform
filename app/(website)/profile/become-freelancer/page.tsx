@@ -28,14 +28,12 @@ const Page = () => {
             placeholder="Mohamed Ahmed"
             rules={{ required: "Email is required" }}
           />
-
           <InputText
             name="fullname"
             label="Email"
             placeholder="Mohamed Ahmed"
             rules={{ required: "Email is required" }}
           />
-
           <div className="flex gap-4">
             <div className="w-full">
               <InputSelect name="country" label="Country" options={[]} />
@@ -48,63 +46,51 @@ const Page = () => {
               />
             </div>
           </div>
-
           <InputText
             name="companyName"
             label="Company Name"
             placeholder="Enter your company name"
             rules={{ required: "Email is required" }}
           />
-
           <InputSelect name="industry" label="Industry" options={[]} />
-
           <InputSelect name="discipline" label="Discipline" options={[]} />
-
           <InputSelect
             name="hear"
             label="How did you hear about Ilearna?"
             options={[]}
           />
-
           <InputText
             name="experience"
             label="Your experience in online teaching"
             placeholder="Tell about your experience"
             rules={{ required: "Email is required" }}
           />
-
           <InputSelect
             name="field2"
             label="Which level you can teach ?"
             options={[]}
           />
-
           <InputSelect
             name="field3"
             label="What languages can you teach ?"
             options={[]}
           />
-
           <InputSelect name="field4" label="Skills & Expertise" options={[]} />
-
           <InputText
             name="portfolio"
             label="Portfolio / work samples"
             placeholder="Paste a link to your portfolio or work samples"
           />
-
           <InputSelect
             name="field4"
             label="Teaching preferences"
             options={[]}
           />
-
           <InputText
             name="message"
             label="Message to admin"
             placeholder="Type a message to the admin"
           />
-
           <InputFile
             name="cv"
             label="Upload your CV"
@@ -120,7 +106,6 @@ const Page = () => {
               Supported formats: PDF, DOC, DOCX (Max size: 5 MB).
             </p>
           </InputFile>
-
           <InputFile
             name="video"
             label="Introduce yourself to the I.learna community"
@@ -136,8 +121,9 @@ const Page = () => {
               Supported formats: MP4, MOV (Max size: 200 MB)
             </p>
           </InputFile>
-
-          <button className="btn btn-accent block ml-auto">Save Changes</button>
+          <button className="btn btn-accent block ml-auto w-full 2xl:w-auto">
+            Save Changes
+          </button>
         </FormProvider>
       </div>
     </>
