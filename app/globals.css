@@ -38,6 +38,10 @@
   .btn-white-trans {
     @apply text-white border border-white hover:bg-white hover:text-accent;
   }
+
+  .inputField {
+    @apply w-full text-sm py-2 px-2 pr-8 border rounded-md focus:outline-none focus:ring-1 font-normal border-accent-light;
+  }
 }
 
 .slick-dots.slick-thumb {
