@@ -1,30 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
-import { Menu, MenuItem, IconButton } from "@mui/material";
+import { IFreelancerTableRecord, IInstructorTableRecord, IStudentTableRecord } from "@/types/api/responses/Tables";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { AdminCourse } from "@/types/api/responses/IGetAdminCoursesList";
+import { IconButton, Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { encrypt } from "@/utils/Cryptojs";
-import { ISystemFreelancer, ISystemStudent } from "@/types/api/responses/Users";
+import React, { useState } from "react";
 
 const statusColors: Record<string, string> = {
-  suspended: "bg-green-100 text-green-700",
-  pending: "bg-yellow-100 text-yellow-700",
-  active: "bg-gray-100 text-gray-700",
+  active: "bg-green-100 text-green-700",
+  published: "bg-yellow-100 text-yellow-700",
+  pending: "bg-gray-100 text-gray-700",
+  drafted: "bg-red-100 text-red-700",
   rejected: "bg-red-100 text-red-700",
 };
 
 interface IProps {
-  instructors: ISystemFreelancer[];
+  freelancers: IFreelancerTableRecord[];
 }
 
-const InstructorsTable: React.FC<IProps> = (props) => {
+const FreelancersTable: React.FC<IProps> = (props) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedCourse, setSelectedCourse] = useState<number | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>, id: number) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>, id: string) => {
     setAnchorEl(event.currentTarget);
     setSelectedCourse(id);
   };
@@ -34,20 +33,20 @@ const InstructorsTable: React.FC<IProps> = (props) => {
     setSelectedCourse(null);
   };
 
-  const onView = (id: number) => {
+  const onView = () => {
     handleClose();
   };
 
-  const onDraft = (id: number) => {
+  const onDraft = () => {
     handleClose();
   };
 
-  const onEdit = (id: number) => {
+  const onEdit = () => {
     handleClose();
     // router.push(`/admin/courses/${encrypt(id.toString())}`);
   };
 
-  const onDelete = (id: number) => {
+  const onDelete = () => {
     handleClose();
   };
 
@@ -57,17 +56,17 @@ const InstructorsTable: React.FC<IProps> = (props) => {
         <thead className="bg-gray-100 text-gray-700">
           <tr>
             <th className="p-3">#</th>
-            <th className="p-3">Student Name</th>
+            <th className="p-3">Instructor Name</th>
             <th className="p-3">Email address</th>
             <th className="p-3">Status</th>
-            <th className="p-3">Created Courses</th>
+            <th className="p-3">Courses Created</th>
             <th className="p-3">Average Rating</th>
             <th className="p-3">Last Activity</th>
             <th className="p-3">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {props.instructors.map((freelancer) => (
+          {props.freelancers.map((freelancer) => (
             <tr key={freelancer.id} className="border-b border-gray-200">
               <td className="p-3">{freelancer.id}</td>
               <td className="p-3">{freelancer.name}</td>
@@ -78,7 +77,7 @@ const InstructorsTable: React.FC<IProps> = (props) => {
                 </span>
               </td>
 
-              <td className="p-3">{freelancer.coursesCreated}</td>
+              <td className="p-3">{freelancer.createdCourses}</td>
               <td className="p-3">{freelancer.averageRating}</td>
               <td className="p-3">{freelancer.lastActivity}</td>
 
@@ -92,10 +91,10 @@ const InstructorsTable: React.FC<IProps> = (props) => {
                   onClose={handleClose}
                   classes={{ paper: "w-48" }}
                 >
-                  <MenuItem onClick={() => onView(freelancer.id)}>View</MenuItem>
-                  <MenuItem onClick={() => onDraft(freelancer.id)}>Draft</MenuItem>
-                  <MenuItem onClick={() => onEdit(freelancer.id)}>Edit</MenuItem>
-                  <MenuItem onClick={() => onDelete(freelancer.id)} className="text-red-600">
+                  <MenuItem onClick={onView}>View</MenuItem>
+                  <MenuItem onClick={onDraft}>Draft</MenuItem>
+                  <MenuItem onClick={onEdit}>Edit</MenuItem>
+                  <MenuItem onClick={onDelete} className="text-red-600">
                     Delete
                   </MenuItem>
                 </Menu>
@@ -108,4 +107,4 @@ const InstructorsTable: React.FC<IProps> = (props) => {
   );
 };
 
-export default InstructorsTable;
+export default FreelancersTable;

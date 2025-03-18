@@ -1,7 +1,7 @@
 import React from "react";
 
 const Page = () => {
-  return <div>Instructor Payments</div>;
+  return <div>Earnings</div>;
 };
 
 export default Page;

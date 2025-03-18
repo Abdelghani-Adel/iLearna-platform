@@ -51,7 +51,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <SideMenuLink href="/admin/users/students">Students Management</SideMenuLink>
             <SideMenuLink href="/admin/users/instructors">Instructors Management</SideMenuLink>
             <SideMenuLink href="/admin/users/freelancers">Freelancers Management</SideMenuLink>
-            <SideMenuLink href="/admin/users/admin">Admins & Moderators</SideMenuLink>
+            <SideMenuLink href="/admin/users/admins">Admins & Moderators</SideMenuLink>
           </SidebarMenu>
 
           <SidebarMenu
@@ -62,7 +62,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               </div>
             }
           >
-            <SideMenuLink href="#">#</SideMenuLink>
+            <SideMenuLink href="/admin/users/students">Earnings & Payouts</SideMenuLink>
+            <SideMenuLink href="/admin/users/students">Student Purchases</SideMenuLink>
           </SidebarMenu>
 
           <SidebarMenu
