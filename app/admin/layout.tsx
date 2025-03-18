@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
 
         <div className="px-4 py-2">
-          <SideMenuLink href="/instructor">
+          <SideMenuLink href="/admin">
             <FaHome />
             Dashboard
           </SideMenuLink>
@@ -31,8 +31,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               </div>
             }
           >
-            <SideMenuLink href="#">All Courses</SideMenuLink>
-            <SideMenuLink href="#">Create Recorded Course</SideMenuLink>
+            <SideMenuLink href="/admin/courses">All Courses</SideMenuLink>
+            <SideMenuLink href="/admin/courses/new-course">Create Recorded Course</SideMenuLink>
             <SideMenuLink href="#">Create Live Course</SideMenuLink>
             <SideMenuLink href="#">Create Track Course</SideMenuLink>
             <SideMenuLink href="#">Create E-Book</SideMenuLink>
@@ -48,7 +48,10 @@ export default function Layout({ children }: { children: ReactNode }) {
               </div>
             }
           >
-            <SideMenuLink href="#">#</SideMenuLink>
+            <SideMenuLink href="/admin/users/students">Students Management</SideMenuLink>
+            <SideMenuLink href="/admin/users/instructors">Instructors Management</SideMenuLink>
+            <SideMenuLink href="/admin/users/freelancers">Freelancers Management</SideMenuLink>
+            <SideMenuLink href="/admin/users/admin">Admins & Moderators</SideMenuLink>
           </SidebarMenu>
 
           <SidebarMenu

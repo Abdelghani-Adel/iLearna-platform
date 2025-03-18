@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "lastActivity": "1 day ago",
+    "averageRating": 4.5,
+    "status": "active",
+    "coursesCreated": 1
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "lastActivity": "3 days ago",
+    "averageRating": 4.2,
+    "status": "pending",
+    "coursesCreated": 0
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "lastActivity": "5 hours ago",
+    "averageRating": 3.8,
+    "status": "active",
+    "coursesCreated": 2
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "email": "bob.brown@example.com",
+    "lastActivity": "1 week ago",
+    "averageRating": 4.7,
+    "status": "suspended",
+    "coursesCreated": 5
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "email": "charlie.davis@example.com",
+    "lastActivity": "2 weeks ago",
+    "averageRating": 3.5,
+    "status": "rejected",
+    "coursesCreated": 0
+  },
+  {
+    "id": 6,
+    "name": "David Wilson",
+    "email": "david.wilson@example.com",
+    "lastActivity": "3 days ago",
+    "averageRating": 4.9,
+    "status": "active",
+    "coursesCreated": 3
+  },
+  {
+    "id": 7,
+    "name": "Emily White",
+    "email": "emily.white@example.com",
+    "lastActivity": "Yesterday",
+    "averageRating": 4.3,
+    "status": "pending",
+    "coursesCreated": 1
+  },
+  {
+    "id": 8,
+    "name": "Frank Harris",
+    "email": "frank.harris@example.com",
+    "lastActivity": "4 days ago",
+    "averageRating": 3.9,
+    "status": "active",
+    "coursesCreated": 2
+  },
+  {
+    "id": 9,
+    "name": "Grace Hall",
+    "email": "grace.hall@example.com",
+    "lastActivity": "5 hours ago",
+    "averageRating": 4.8,
+    "status": "suspended",
+    "coursesCreated": 4
+  },
+  {
+    "id": 10,
+    "name": "Henry Adams",
+    "email": "henry.adams@example.com",
+    "lastActivity": "2 days ago",
+    "averageRating": 4.0,
+    "status": "active",
+    "coursesCreated": 2
+  }
+]

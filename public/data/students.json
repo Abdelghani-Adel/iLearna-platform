@@ -1,0 +1,66 @@
+[
+  { "id": 1, "name": "John Doe", "email": "john.doe@example.com", "enrolledCourses": 2, "lastActivity": "1 day ago" },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "enrolledCourses": 3,
+    "lastActivity": "3 days ago"
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "enrolledCourses": 1,
+    "lastActivity": "5 hours ago"
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "email": "bob.brown@example.com",
+    "enrolledCourses": 4,
+    "lastActivity": "1 week ago"
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "email": "charlie.davis@example.com",
+    "enrolledCourses": 0,
+    "lastActivity": "2 weeks ago"
+  },
+  {
+    "id": 6,
+    "name": "David Wilson",
+    "email": "david.wilson@example.com",
+    "enrolledCourses": 5,
+    "lastActivity": "3 days ago"
+  },
+  {
+    "id": 7,
+    "name": "Emily White",
+    "email": "emily.white@example.com",
+    "enrolledCourses": 2,
+    "lastActivity": "Yesterday"
+  },
+  {
+    "id": 8,
+    "name": "Frank Harris",
+    "email": "frank.harris@example.com",
+    "enrolledCourses": 1,
+    "lastActivity": "4 days ago"
+  },
+  {
+    "id": 9,
+    "name": "Grace Hall",
+    "email": "grace.hall@example.com",
+    "enrolledCourses": 6,
+    "lastActivity": "5 hours ago"
+  },
+  {
+    "id": 10,
+    "name": "Henry Adams",
+    "email": "henry.adams@example.com",
+    "enrolledCourses": 3,
+    "lastActivity": "2 days ago"
+  }
+]
