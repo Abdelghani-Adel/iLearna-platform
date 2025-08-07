@@ -14,7 +14,7 @@ const Empty: FC<IProps> = (props) => {
   const src = props.imageSrc ?? "/images/empty.png";
 
   return (
-    <div className="flex flex-col justify-cener items-center space-y-4 py-4">
+    <div className="flex flex-col justify-cener items-center space-y-3 py-4">
       <Image src={src} alt="Empty" width={298} height={237} />
 
       <p className="font-semibold text-customGray">{props.message}</p>
