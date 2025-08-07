@@ -18,7 +18,7 @@ const MainHeaderActions = () => {
 };
 
 const SearchAction: FC = () => {
-  return <InputSearch className="w-72" />;
+  return <InputSearch />;
 };
 
 const CartActions: FC = () => {
